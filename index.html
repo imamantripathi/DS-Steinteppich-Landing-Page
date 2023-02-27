@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> DS Steinteppich </title>
-  <link rel="shortcut icon" href="https://ds-steinteppich.de/img/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="img/DS3.png" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+  <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
   <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -18,12 +18,13 @@
 <body class="bg-[#fff]">
   <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 shadow sticky z-50 top-0">
     <div class="sm:flex sm:items-center sm:justify-between bg-[#f1f1f1] pt-2 pb-2 pr-4 pl-4 mb-4 hidden">
-      <span class="text-sm text-dark sm:text-center "> <i class="fa fa-phone-square"></i> +49
+      <a href="tel:+49 159/06529020" class="text-sm text-dark sm:text-center "> <i class="fa fa-phone-square"></i> +49
         159/06529020
-      </span>
-      <span class="text-sm text-dark sm:text-center "> <i class="fa fa-envelope"></i>
+      </a>
+      <a href="mailto:armin.erath@ds-steinteppich.de" class="text-sm text-dark sm:text-center "> <i
+          class="fa fa-envelope"></i>
         armin.erath@ds-steinteppich.de
-      </span>
+      </a>
 
 
       <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
@@ -58,8 +59,9 @@
       </a>
       <div class="flex md:order-2">
         <button type="button"
+          onclick="location.href=`https://wa.me/4915117269232?text=Habe%20Interesse%20bitte%20um%20R%C3%BCckruf!`"
           class="text-white bg-[#DF9E33] hover:bg-[#C97F2B] focus:ring-4 focus:outline-none focus:ring-[#F0B637] font-medium rounded text-sm px-5 py-2.5 text-center mr-3 md:mr-0 shadow">
-          Home</button>
+          <i class="fa fa-whatsapp"></i> WhatsApp </button>
       </div>
     </div>
   </nav>
@@ -141,7 +143,7 @@
           </div>
           <div
             class="absolute -bottom-52 group-hover:bottom-2 right-2 left-2 transition-all duration-500 bg-white dark:bg-slate-900 p-4 rounded shadow dark:shadow-gray-700 text-center">
-            <a href="#" class="hover:text-primary-600 text-lg transition duration-500 font-medium">Treppen</a>
+            <a href="index1.html" class="hover:text-primary-600 text-lg transition duration-500 font-medium">Treppen</a>
           </div>
         </div>
         <div class="flex w-1/2 lg:w-1/3 flex-wrap group relative">
@@ -599,7 +601,7 @@
     <div class="block rounded-lg shadow-lg pl-10 pr-10">
       <div class="flex flex-wrap items-center">
         <div class="block w-full lg:flex grow-0 shrink-0 basis-auto lg:w-6/12 xl:w-4/12">
-          <img src="img/feature2.png" alt="" class="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" />
+          <img src="img/DS3.png" alt="" class="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" />
         </div>
         <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
           <div class="px-6 py-12 md:px-12">
@@ -635,45 +637,139 @@
     </div>
 
   </section>
-  <section class="mb-20 bg-[url('img/bg5.png')] bg-cover bg-fixed text-gray-100">
+  <section class="mb-20 bg-[url('img/bg5.png')] bg-cover bg-fixed text-gray-100 ">
     <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
       <p class="p-2 text-sm font-medium tracking-wider text-center uppercase">FAQs</p>
       <h2 class="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Wie lange hält ein fugenloser Belag?
       </h2>
-      <div class="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-white">
-        <details>
-          <summary class="py-2 outline-none cursor-pointer focus:underline">Wie lange hält ein fugenloser Belag?
-          </summary>
-          <div class="px-4 pb-4">
-            <p>Bei normaler Beanspruchung, wie man sie aus dem eigenen Haushalt kennt, halten fugenlose Fußböden weit
-              über 20 Jahre. Voraussetzung ist die regelmäßige Reinigung und Pflege des Bodenbelages.</p>
-          </div>
-        </details>
-        <details>
-          <summary class="py-2 outline-none cursor-pointer focus:underline">Was sind die Vorteile eines fugenlosen
-            Bodens?</summary>
-          <div class="px-4 pb-4">
-            <ul>
-              <li>kein störendes Fugenbild wie bei Fliesen</li>
-              <li>besser an die Gegebenheiten anpassbar</li>
-              <li>keine Übergänge</li>
-              <li>keine Schwellen</li>
-              <li>leichtere Reinigung</li>
-            </ul>
+      <div class="flex justify-center items-start my-2">
+        <div class="w-full sm:w-10/12 md:w-1/2 my-1">
+          <ul class="flex flex-col">
+            <li class="bg-white my-2 shadow-lg" x-data="accordion(1)">
+              <h2 @click="handleClick()"
+                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
+                <span>When will my order arrive?</span>
+                <svg :class="handleRotate()"
+                  class="fill-current text-[#DF9E33] h-6 w-6 transform transition-transform duration-500"
+                  viewBox="0 0 20 20">
+                  <path
+                    d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
+                  </path>
+                </svg>
+              </h2>
+              <div x-ref="tab" :style="handleToggle()"
+                class="border-l-2 border-[#DF9E33] overflow-hidden max-h-0 duration-500 transition-all">
+                <p class="p-3 text-gray-900">
+                  Shipping time is set by our delivery partners, according to the delivery method chosen by you.
+                  Additional details can be found in the order confirmation
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg" x-data="accordion(2)">
+              <h2 @click="handleClick()"
+                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
+                <span>When will my order arrive?</span>
+                <svg :class="handleRotate()"
+                  class="fill-current text-[#DF9E33] h-6 w-6 transform transition-transform duration-500"
+                  viewBox="0 0 20 20">
+                  <path
+                    d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
+                  </path>
+                </svg>
+              </h2>
+              <div x-ref="tab" :style="handleToggle()"
+                class="border-l-2 border-[#DF9E33] overflow-hidden max-h-0 duration-500 transition-all">
+                <p class="p-3 text-gray-900">
+                  Shipping time is set by our delivery partners, according to the delivery method chosen by you.
+                  Additional details can be found in the order confirmation
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg" x-data="accordion(3)">
+              <h2 @click="handleClick()"
+                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
+                <span>When will my order arrive?</span>
+                <svg :class="handleRotate()"
+                  class="fill-current text-[#DF9E33] h-6 w-6 transform transition-transform duration-500"
+                  viewBox="0 0 20 20">
+                  <path
+                    d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
+                  </path>
+                </svg>
+              </h2>
+              <div x-ref="tab" :style="handleToggle()"
+                class="border-l-2 border-[#DF9E33] overflow-hidden max-h-0 duration-500 transition-all">
+                <p class="p-3 text-gray-900">
+                  Shipping time is set by our delivery partners, according to the delivery method chosen by you.
+                  Additional details can be found in the order confirmation
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg" x-data="accordion(4)">
+              <h2 @click="handleClick()"
+                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
+                <span>When will my order arrive?</span>
+                <svg :class="handleRotate()"
+                  class="fill-current text-[#DF9E33] h-6 w-6 transform transition-transform duration-500"
+                  viewBox="0 0 20 20">
+                  <path
+                    d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
+                  </path>
+                </svg>
+              </h2>
+              <div x-ref="tab" :style="handleToggle()"
+                class="border-l-2 border-[#DF9E33] overflow-hidden max-h-0 duration-500 transition-all">
+                <p class="p-3 text-gray-900">
+                  Shipping time is set by our delivery partners, according to the delivery method chosen by you.
+                  Additional details can be found in the order confirmation
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg" x-data="accordion(5)">
+              <h2 @click="handleClick()"
+                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
+                <span>When will my order arrive?</span>
+                <svg :class="handleRotate()"
+                  class="fill-current text-[#DF9E33] h-6 w-6 transform transition-transform duration-500"
+                  viewBox="0 0 20 20">
+                  <path
+                    d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
+                  </path>
+                </svg>
+              </h2>
+              <div x-ref="tab" :style="handleToggle()"
+                class="border-l-2 border-[#DF9E33] overflow-hidden max-h-0 duration-500 transition-all">
+                <p class="p-3 text-gray-900">
+                  Shipping time is set by our delivery partners, according to the delivery method chosen by you.
+                  Additional details can be found in the order confirmation
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg" x-data="accordion(6)">
+              <h2 @click="handleClick()"
+                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
+                <span>When will my order arrive?</span>
+                <svg :class="handleRotate()"
+                  class="fill-current text-[#DF9E33] h-6 w-6 transform transition-transform duration-500"
+                  viewBox="0 0 20 20">
+                  <path
+                    d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
+                  </path>
+                </svg>
+              </h2>
+              <div x-ref="tab" :style="handleToggle()"
+                class="border-l-2 border-[#DF9E33] overflow-hidden max-h-0 duration-500 transition-all">
+                <p class="p-3 text-gray-900">
+                  Shipping time is set by our delivery partners, according to the delivery method chosen by you.
+                  Additional details can be found in the order confirmation
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-          </div>
-        </details>
-        <details>
-          <summary class="py-2 outline-none cursor-pointer focus:underline">Kann ich einen fugenlosen Boden selber
-            machen?</summary>
-          <div class="px-4 pb-4 space-y-2">
-            <p>Nicht empfehlenswert. Besser den Fachmann zur Ausführung kommen lassen. Die Verarbeitung erfordert viel
-              Grundwissen bezüglich der richtigen Untergrundvorbereitung, aber auch die Verarbeitung selbst kann ohne
-              Erfahrung nur bedingt ausgeführt werden.</p>
-          </div>
-        </details>
-      </div><a
-        class="inline-block px-7 py-3 mb-2 mt-10 mb-5 text-center bg-[transparent] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
+      <a class="inline-block px-7 py-3 mb-2 mt-10 mb-5 text-center bg-[transparent] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
         data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Jetzt Anfrage stellen &nbsp; <i
           class="fa fa-arrow-right"></i></a>
     </div>
@@ -834,8 +930,8 @@
       Sie verhindert gleichzeitig Riss- und Algenbildung. Das von uns verwendete schadstoff- und lösungsmittelfreie
       Bindemittel sorgt für einen ökologisch wertvollen Fußboden.</p>
 
-    <div class="grid sm:grid-rows lg:grid-cols-2 gap-4 lg:space-x-20">
-      <div class="w-[300px] lg:w-[500px] rounded-lg bg-white shadow-lg lg:ml-20 lg:mb-5 mx-auto">
+    <div class="grid sm:grid-rows lg:grid-cols-2 gap-4 lg:space-20">
+      <div class="w-[300px] lg:w-[500px] rounded-lg bg-white shadow-lg  lg:mb-5 mx-auto">
         <a href="#!" data-te-ripple-init data-te-ripple-color="light">
           <img class="rounded-t-lg" src="img/stones/1.png" alt="" />
         </a>
@@ -1132,6 +1228,29 @@
           prevEl: '.prev-button',
         },
       })
+    })
+  </script>
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.store('accordion', {
+        tab: 0
+      });
+
+      Alpine.data('accordion', (idx) => ({
+        init() {
+          this.idx = idx;
+        },
+        idx: -1,
+        handleClick() {
+          this.$store.accordion.tab = this.$store.accordion.tab === this.idx ? 0 : this.idx;
+        },
+        handleRotate() {
+          return this.$store.accordion.tab === this.idx ? 'rotate-180' : '';
+        },
+        handleToggle() {
+          return this.$store.accordion.tab === this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : '';
+        }
+      }));
     })
   </script>
   <script src="js/script.js"></script>
