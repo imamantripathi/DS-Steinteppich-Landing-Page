@@ -1,814 +1,786 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DS Steinteppich</title>
+        <link rel="shortcut icon" href="img/DS3.png" type="image/x-icon" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+        <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> DS Steinteppich </title>
-  <link rel="shortcut icon" href="img/DS3.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
-  <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <body class="bg-[#fff]">
+        <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 shadow sticky z-50 top-0">
+            <div class="sm:flex sm:items-center sm:justify-between bg-[#f1f1f1] pt-2 pb-2 pr-4 pl-4 mb-4 hidden">
+                <a href="tel:+49 159/06529020" class="text-sm text-dark sm:text-center"> <i class="fa fa-phone-square"></i> +49 159/06529020 </a>
+                <a href="mailto:armin.erath@ds-steinteppich.de" class="text-sm text-dark sm:text-center">
+                    <i class="fa fa-envelope"></i>
+                    armin.erath@ds-steinteppich.de
+                </a>
 
-<body class="bg-[#fff]">
-  <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 shadow sticky z-50 top-0">
-    <div class="sm:flex sm:items-center sm:justify-between bg-[#f1f1f1] pt-2 pb-2 pr-4 pl-4 mb-4 hidden">
-      <a href="tel:+49 159/06529020" class="text-sm text-dark sm:text-center "> <i class="fa fa-phone-square"></i> +49
-        159/06529020
-      </a>
-      <a href="mailto:armin.erath@ds-steinteppich.de" class="text-sm text-dark sm:text-center "> <i
-          class="fa fa-envelope"></i>
-        armin.erath@ds-steinteppich.de
-      </a>
-
-
-      <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill-rule="evenodd"
-              d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-              clip-rule="evenodd" />
-          </svg>
-          <span class="sr-only">Facebook page</span>
-        </a>
-        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill-rule="evenodd"
-              d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-              clip-rule="evenodd" />
-          </svg>
-          <span class="sr-only">Instagram page</span>
-        </a>
-        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-          </svg>
-          <span class="sr-only">Twitter page</span>
-        </a>
-      </div>
-    </div>
-    <div class="container flex flex-wrap items-center justify-between mx-auto">
-      <a href="index.html" class="flex items-center">
-        <img src="https://ds-steinteppich.de/img/logo.png" class="h-6 mr-3 sm:h-9" alt="Logo" />
-      </a>
-      <div class="flex md:order-2">
-        <button type="button"
-          onclick="location.href=`https://wa.me/4915117269232?text=Habe%20Interesse%20bitte%20um%20R%C3%BCckruf!`"
-          class="text-white bg-[#8B4816] hover:bg-[#C97F2B] focus:ring-4 focus:outline-none focus:ring-[#F0B637] font-medium rounded text-sm px-5 py-2.5 text-center mr-3 md:mr-0 shadow">
-          <i class="fa fa-whatsapp"></i> WhatsApp </button>
-      </div>
-    </div>
-  </nav>
-  <section class="mb-20">
-    
-    <div class="relative overflow-hidden bg-no-repeat bg-cover"><img src="img/hero-1.png" alt="" width="100%" style="width: 100%; ">
-    </div>
-
-    <div class="container mx-auto px-6 md:px-12 xl:px-32">
-      <div class="text-center text-gray-800">
-        <div class="block rounded-lg shadow-lg px-6 py-12 md:py-16 md:px-12  -mt-14  lg:-mt-48"
-          style=" background: hsla(0, 0%, 100%, 0.7); backdrop-filter: blur(20px);">
-          <h1 class="text-2xl md:text-6xl xl:text-5xl font-bold tracking-tight mb-12">"Von langweilig bis luxuriös: <br>
-            Verwandeln Sie Ihr Zuhause mit
-            <span class="text-[#DF9E33]">Steinteppich."</span>
-          </h1>
-          <a class="inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
-            data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Melde dich</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="mb-20">
-
-    <div class="px-4 text-center md:w-10/12 xl:w-10/12 mx-auto">
-      <h1 class="mb-4 text-4xl font-medium"><span class="text-[#DF9E33]"> Die richtige</span> Wahl für Renovierung und
-        Neugestaltung
-      </h1>
-      <p class="mb-4 text-xl">Steinteppich ist in einer breiten Palette von Farben und Stilen erhältlich, von neutraler
-        Erde
-        Töne zu kräftigen und lebendigen Farbtönen. Die Steine können auch in Steinteppich verwendet werden
-        variieren in Größe und Form, was einen einzigartigen und strukturierten Look erzeugen kann.</p>
-    </div>
-    <div class="grid grid-rows lg:grid-cols-2 gap-4 px-4 md:w-10/12 xl:w-10/12 mx-auto pt-4">
-      <div class="text-center mx-auto"><img class="shadow-lg" style="border-radius: 10% 10% 1% 10%;" src="img/feature-1.png"
-          alt="Image"></div>
-      <div>
-        <h1 class="mb-4 text-2xl font-medium">"Keine Zeit zu verlieren? Wählen Sie Ihren Traumboden in nur 3 Minuten."
-        </h1>
-        <ul>
-          <li class="text-xl mb-4">
-            <i class="fa fa-check text-2xl text-[#DF9E33]"></i> Langlebigkeit
-          </li>
-          <li class="text-xl mb-4">
-            <i class="fa fa-check text-2xl text-[#DF9E33]"></i> Pflegeleichtigkeit
-          </li>
-          <li class="text-xl mb-4">
-            <i class="fa fa-check text-2xl text-[#DF9E33]"></i> ein nahtloser Look
-          </li>
-          <li class="text-xl mb-4">
-            <i class="fa fa-check text-2xl text-[#DF9E33]"></i> extrem rutschfest
-          </li>
-          <li class="text-xl mb-4">
-            <i class="fa fa-check text-2xl text-[#DF9E33]"></i> Frostbeständig
-          </li>
-          <li class="text-xl mb-4">
-            <i class="fa fa-check text-2xl text-[#DF9E33]"></i> ökologisch & nachhaltig (95% Naturstein)
-          </li>
-          <li class="text-xl mb-4">
-            <i class="fa fa-check text-2xl text-[#DF9E33]"></i> UV-beständig
-          </li>
-        </ul>
-
-        <a class="inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
-          data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Holen Sie sich jetzt <br>
-          professionelle Antworten.</a>
-      </div>
-    </div>
-  </section>
-  <section class="overflow-hidden">
-    <div class="px-4 text-center md:w-10/12 xl:w-10/12 mx-auto">
-      <h1 class="mb-4 text-3xl lg:text-4xl font-medium">Die Steinteppiche von <span class="text-[#DF9E33]">DS-Steinteppich</span>
-        sind extrem
-      </h1>
-      <p class="mb-4 text-xl">natürlich mit Langlebigkeit, Widerstandsfähigkeit und Vielfalt verbunden. Diese
-        Charakterzüge bleiben bei der Treppenrenovierung mit dem Stein erhalten
-        Teppich. Gerade im Außenbereich ist die Verwendung von Marmorkies für Treppen ideal
-        Renovierung und Gestaltung. Die Verwendung von UV-beständigen Bindemitteln ist wichtig z
-        Outdoor-Einsatz. Herkömmliche Bindemittel würden dadurch vergilben
-        dauerhafte Sonneneinstrahlung, so dass ein leicht gelblicher Schimmer entstehen würde
-        über die Treppe verteilt. UV-beständige Bindemittel sind jedoch der Aufgabe gewachsen.</p>
-    </div>
-    <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
-      <div class="-m-1 flex flex-wrap md:-m-2 justify-center">
-        <div class="flex w-1/2 lg:w-1/3 flex-wrap group relative">
-          <div class="w-full p-1 md:p-2">
-            <figure
-              class="relative max-w-sm transition-all duration-300 cursor-pointer hover:drop-shadow-2xl">
-              <a href="index1.html">
-                <img class="rounded-lg" src="img/services/1.png" alt="image description">
-              </a>
-              <figcaption class="absolute bottom-2 mx-auto bg-white w-full shadow pb-2">
-                <p class="text-2xl text-black text-center font-bold">Treppen</p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-        <div class="flex w-1/2 lg:w-1/3 flex-wrap group relative">
-          <div class="w-full p-1 md:p-2">
-            <figure
-              class="relative max-w-sm transition-all duration-300 cursor-pointer  hover:drop-shadow-2xl">
-              <a href="index2.html">
-                <img class="rounded-lg" src="img/services/2.png" alt="image description">
-              </a>
-              <figcaption class="absolute bottom-2 mx-auto bg-white w-full shadow pb-2">
-                <p class="text-2xl text-black text-center font-bold">Terrassen</p>
-              </figcaption>
-            </figure>
-          </div>
-
-        </div>
-        <div class="flex w-1/2 lg:w-1/3 flex-wrap group relative">
-          <div class="w-full p-1 md:p-2">
-            <figure
-              class="relative max-w-sm transition-all duration-300 cursor-pointer hover:drop-shadow-2xl">
-              <a href="index3.html">
-                <img class="rounded-lg" src="img/services/3.png" alt="image description">
-              </a>
-              <figcaption class="absolute bottom-2 mx-auto bg-white w-full shadow pb-2">
-                <p class="text-2xl text-black text-center font-bold">Exterieur</p>
-              </figcaption>
-            </figure>
-          </div>
-
-        </div>
-        <div class="flex w-1/2 lg:w-1/3 flex-wrap group relative">
-          <div class="w-full p-1 md:p-2">
-            <figure
-              class="relative max-w-sm transition-all duration-300 cursor-pointer  hover:drop-shadow-2xl">
-              <a href="index4.html">
-                <img class="rounded-lg" src="img/services/6.png" alt="image description">
-              </a>
-              <figcaption class="absolute bottom-2 mx-auto bg-white w-full shadow pb-2">
-                <p class="text-2xl text-black text-center font-bold">Balkone</p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-        <div class="flex w-1/1 lg:w-1/3 flex-wrap group relative">
-          <div class="w-full p-1 md:p-2">
-            <figure
-              class="relative max-w-sm transition-all duration-300 cursor-pointer  hover:drop-shadow-2xl">
-              <a href="index5.html">
-                <img class="rounded-lg" src="img/services/7.png" alt="image description">
-              </a>
-              <figcaption class="absolute bottom-2 mx-auto bg-white w-full shadow pb-2">
-                <p class="text-2xl text-black text-center font-bold">Innenbereiche</p>
-              </figcaption>
-            </figure>
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-  <section class="mb-10">
-    <center>
-      <a class="inline-block px-7 py-3 mb-2 mt-16 text-center bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
-        data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Expertenrat einholen &nbsp; <i
-          class="fa fa-arrow-right"></i></a>
-    </center>
-  </section>
-  <section class="mb-20 bg-[url('img/bg2.png')] bg-cover bg-fixed">
-    <div class="container mx-auto p-4 my-6 space-y-2 text-center">
-      <h2 class="text-4xl font-bold">Alle Vorteile auf einen Blick</h2>
-    </div>
-    <div class="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
-      <div class="flex flex-col items-center p-4 rounded-tl-3xl bg-[#FDF4DB] hover:shadow-lg shadow-orange-500">
-        <img src="img/icon/1.png" class="w-50 h-50" />
-
-
-        <h3 class="my-3 text-3xl font-semibold">Langlebigkeit</h3>
-        <div class="space-y-1 leading-tight text-center">
-          <p>Stein ist ein natürliches und langlebiges Material, das Jahrzehnte oder sogar überdauern kann
-            Jahrhundert mit der richtigen Pflege und Wartung. Im Gegensatz zu einigen anderen Bodenbelägen
-            Materialien wie Teppich oder Vinyl, Steinböden müssen nicht ersetzt werden
-            oft und kann starkem Fußgängerverkehr und Verschleiß im Laufe der Zeit standhalten.</p>
-        </div>
-      </div>
-      <div class="flex flex-col items-center p-4  bg-[#FDF4DB] hover:shadow-lg shadow-orange-500">
-        <img src="img/icon/2.png" class="w-50 h-50" />
-        <h3 class="my-3 text-3xl font-semibold">Pflegeleichtigkeit</h3>
-        <div class="space-y-1 leading-tight text-center">
-          <p>kann ohne herkömmliche Fugen installiert werden, die das verhindern können
-            Ansammlung von Schmutz und Verfärbungen. Denn herkömmliche Gelenke können das
-            fangen Schmutz und Dreck auf, die schwer zu reinigen sind und zu Verfärbungen führen können
-            im Laufe der Zeit.</p>
-        </div>
-      </div>
-      <div class="flex flex-col items-center p-4 rounded-tr-3xl bg-[#FDF4DB] hover:shadow-lg shadow-orange-500">
-        <img src="img/icon/3.png" class="w-50 h-50" />
-        <h3 class="my-3 text-3xl font-semibold">UV-beständig</h3>
-        <div class="space-y-1 leading-tight text-center">
-          <p>Sonnenbeständiger Steinteppich: UV-beständiger Bodenbelag für jeden Raum.</p>
-        </div>
-      </div>
-      <div class="flex flex-col items-center p-4 rounded-bl-3xl bg-[#FDF4DB] hover:shadow-lg shadow-orange-500">
-        <img src="img/icon/4.png" class="w-50 h-50" />
-        <h3 class="my-3 text-3xl font-semibold">Anti-Rutsch</h3>
-        <div class="space-y-1 leading-tight text-center">
-          <p>Im Vergleich zu anderen vergleichbaren glatten Bodenbelägen, wie Parkett, Laminat oder Fliesen,
-            Die feinkörnige Struktur des Steinteppichs ist sehr rutschfest.</p>
-        </div>
-      </div>
-      <div class="flex flex-col items-center p-4  bg-[#FDF4DB] hover:shadow-lg shadow-orange-500">
-        <img src="img/icon/5.png" class="w-50 h-50" />
-        <h3 class="my-3 text-3xl font-semibold">ein nahtloser Look</h3>
-        <div class="space-y-1 leading-tight text-center">
-          <p>Unsere Steinteppiche werden fugenlos verlegt, ohne sichtbare Fugen.</p>
-        </div>
-      </div>
-      <div class="flex flex-col items-center p-4 rounded-br-3xl bg-[#FDF4DB] hover:shadow-lg shadow-orange-500">
-        <img src="img/icon/6.png" class="w-50 h-50" />
-        <h3 class="my-3 text-3xl font-semibold">Frostbeständig</h3>
-        <div class="space-y-1 leading-tight text-center">
-          <p>Steinteppiche können durch die Auswahl einer Steinart frostbeständig gemacht werden
-            natürlich frostbeständig, oder durch Behandlung des Steins mit einer speziellen Beschichtung oder
-            Versiegelung
-            das schützt vor Frost-Tau-Zyklen.</p>
-        </div>
-      </div>
-
-
-
-    </div>
-    <center>
-      <a class="inline-block px-7 py-3 mb-2 mt-10 mb-5 text-center bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
-        data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">mache eine Anfrage &nbsp; <i
-          class="fa fa-arrow-right"></i></a>
-    </center>
-  </section>
-  <section class="mx-auto py-10 max-w-[85%] lg:max-w-[70%]">
-    <h2 class="text-center text-2xl lg:text-4xl font-semibold text-neutral-very-dark-blue mb-5">
-      In vier Schritten zu Ihrem neuen Traum-Boden
-    </h2>
-    <div class="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:items-center">
-      <article
-        class="bg-white overflow-hidden relative before:content-[''] before:inset-0 before:-translate-y-[98.5%] before:absolute before:bg-primary-cyan p-7 flex flex-col gap-8 rounded-md shadow-xl sm:col-span-2 lg:row-span-2 lg:col-span-1">
-        <div>
-          <h3 class="mb-1 text-xl text-neutral-very-dark-blue font-semibold">
-            Kontaktaufnahme </h3>
-          <p class="text-sm text-neutral-grayish-blue">
-            Sie senden uns Ihre Vorstellungen und Wünsche. Dies dauert mit unserem interaktiven Anfrage-Tool
-            nur 3 Minuten.
-          </p>
-        </div>
-        <div class="self-end">
-          <i class="fa fa-users text-5xl text-[#DF9E33]"></i>
-        </div>
-      </article>
-      <article
-        class="bg-white overflow-hidden relative before:content-[''] before:inset-0 before:-translate-y-[98.5%] before:absolute before:bg-primary-red p-7 flex flex-col gap-8 rounded-md shadow-xl sm:col-start-1 lg:row-start-1 lg:col-start-2">
-        <div>
-          <h3 class="mb-1 text-xl text-neutral-very-dark-blue font-semibold">
-            Beratung am Telefon
-          </h3>
-          <p class="text-sm text-neutral-grayish-blue">
-            Wir melden uns bei Ihnen zu Ihrem Wunschtermin. Erste individuelle Fragen klären wir gerne
-            direkt am Telefon mit Ihnen.
-          </p>
-        </div>
-        <div class="self-end">
-          <i class="fa fa-phone-square text-5xl text-[#DF9E33]"></i>
-
-        </div>
-      </article>
-      <article
-        class="bg-white overflow-hidden relative before:content-[''] before:inset-0 before:-translate-y-[98.5%] before:absolute before:bg-primary-orange p-7 flex flex-col gap-8 rounded-md shadow-xl sm:row-start-2 sm:col-start-2 lg:row-start-2 lg:col-start-2">
-        <div>
-          <h3 class="mb-1 text-xl text-neutral-very-dark-blue font-semibold">
-            Vor Ort Termin
-          </h3>
-          <p class="text-sm text-neutral-grayish-blue">
-            Zum genauen Aufmaß und Absprache aller nötigen Details besuchen wir Sie nach Terminabsprache bei
-            Ihnen zu Hause.
-          </p>
-        </div>
-        <div class="self-end">
-          <i class="fa fa-map-marker text-5xl text-[#DF9E33]"></i>
-
-        </div>
-      </article>
-      <article
-        class="bg-white overflow-hidden relative before:content-[''] before:inset-0 before:-translate-y-[98.5%] before:absolute before:bg-primary-blue p-7 flex flex-col gap-8 rounded-md shadow-xl sm:col-span-2 lg:row-span-2 lg:col-start-3">
-        <div>
-          <h3 class="mb-1 text-xl text-neutral-very-dark-blue font-semibold">
-            Angebotserstellung
-          </h3>
-          <p class="text-sm text-neutral-grayish-blue">
-            Sie erhalten ein detailliertes Angebot zum Festpreis für Ihren neuen Traumboden. Gerne planen
-            wir auch optionale Erweiterungen ein.
-          </p>
-        </div>
-        <div class="self-end">
-          <i class="fa fa-file-text text-5xl text-[#DF9E33]"></i>
-        </div>
-      </article>
-    </div>
-    <h2 class="text-center text-xl lg:text-3xl font-semibold text-neutral-very-dark-blue mt-10 mb-3">
-      Ihre Suche beginnt und endet bei uns
-    </h2>
-    <center>
-      <a class="inline-block px-7 py-3 mb-2 mt-10 mb-5 text-center bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
-        data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">kontaktiere uns jetzt &nbsp; <i
-          class="fa fa-arrow-right"></i></a>
-    </center>
-  </section>
-  <section class="bg-[url('img/bg2.png')] bg-cover bg-fixed pb-5 pt-20">
-    <div class="hero container max-w-screen-lg mx-auto text-center">
-      <img src="img/stone-carpet-reviews.png" onclick="location.href='#reviews'" alt="screenshot" />
-    </div>
-  </section>
-  <section class="bg-[url('img/bg2.png')] bg-cover bg-fixed" id="reviews">
-    <div class="mx-auto max-w-[1340px] px-4 py-16 sm:px-6 sm:py-24 lg:mr-0 lg:pl-8 lg:pr-0">
-
-
-      <div class="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16">
-        <div class="max-w-xl text-center sm:text-left">
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-            Verlassen Sie sich nicht nur auf uns...
-            <br class="hidden sm:block lg:hidden" />
-            Lesen Sie die Bewertungen unserer Kunden
-          </h2>
-          <div class="hidden lg:mt-8 lg:flex lg:gap-4">
-            <button
-              class="prev-button rounded-full border border-[#DF9E33] p-3 text-[#DF9E33] hover:bg-[#DF9E33] hover:text-white">
-              <span class="sr-only">Previous Slide</span>
-              <svg class="h-5 w-5 -rotate-180 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-              </svg>
-            </button>
-
-            <button
-              class="next-button rounded-full border border-[#DF9E33] p-3 text-[#DF9E33] hover:bg-[#DF9E33] hover:text-white">
-              <span class="sr-only">Next Slide</span>
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="-mx-6 lg:col-span-2 lg:mx-0">
-          <div class="swiper-container !overflow-hidden">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <blockquote class="flex h-full flex-col justify-between bg-white p-12">
-                  <div>
-                    <div class="flex gap-0.5 text-green-500">
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    </div>
-
-                    <div class="mt-4">
-                      <p class="text-2xl font-bold text-[#DF9E33] sm:text-3xl">
-                        ausgezeichnete Arbeit
-                      </p>
-
-                      <p class="mt-4 leading-relaxed text-gray-500">
-                        Ich bin sehr zufrieden mit Ihrem Service und der Art und Weise, wie Sie Geschäfte machen. Meine
-                        Treppe sieht aus
-                        unglaublich und ich kann mit Sicherheit sagen, dass es nicht meine letzte Bestellung bei euch
-                        war
-                      </p>
-                    </div>
-                  </div>
-
-                  <footer class="mt-8 text-sm text-gray-500">
-                    &mdash; cludia A.
-                  </footer>
-                </blockquote>
-              </div>
-
-              <div class="swiper-slide">
-                <blockquote class="flex h-full flex-col justify-between bg-white p-12">
-                  <div>
-                    <div class="flex gap-0.5 text-green-500">
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    </div>
-
-                    <div class="mt-4">
-                      <p class="text-2xl font-bold text-[#DF9E33] sm:text-3xl">
-                        Gute Arbeit
-                      </p>
-
-                      <p class="mt-4 leading-relaxed text-gray-500">
-                        Ich hatte eine großartige Erfahrung mit euch, und euer Kundenservice war großartig.
-                        Ich liebe meine Treppe jetzt noch mehr, als ich es vor dem DS-Steinteppich gemacht habe
-                        Stein. Ich bin dir sehr dankbar für alles. zeigt mir nach rechts
-                        Richtung Ich bin sehr glücklich, vielen Dank
-                      </p>
-                    </div>
-                  </div>
-
-                  <footer class="mt-8 text-sm text-gray-500">
-                    &mdash; Adisa B.
-                  </footer>
-                </blockquote>
-              </div>
-
-              <div class="swiper-slide">
-                <blockquote class="flex h-full flex-col justify-between bg-white p-12">
-                  <div>
-                    <div class="flex gap-0.5 text-green-500">
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    </div>
-
-                    <div class="mt-4">
-                      <p class="text-2xl font-bold text-[#DF9E33] sm:text-3xl">
-                        herausragende Arbeit
-                      </p>
-
-                      <p class="mt-4 leading-relaxed text-gray-500">
-                        Vielen Dank für all Ihren großartigen Service. Du hast meine Treppe pünktlich gemacht und
-                        auf so ordentliche Weise. Das Team, das mit mir gearbeitet hat, war professionell. Ich bin sehr
-                        glücklich mit dem, was du getan hast.
-                      </p>
-                    </div>
-                  </div>
-
-                  <footer class="mt-8 text-sm text-gray-500">
-                    &mdash; Michael Kuchs
-                  </footer>
-                </blockquote>
-              </div>
-              <div class="swiper-slide">
-                <blockquote class="flex h-full flex-col justify-between bg-white p-12">
-                  <div>
-                    <div class="flex gap-0.5 text-green-500">
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-
-                      <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    </div>
-
-                    <div class="mt-4">
-                      <p class="text-2xl font-bold text-[#DF9E33] sm:text-3xl">
-                        beste Arbeit </p>
-
-                      <p class="mt-4 leading-relaxed text-gray-500">
-                        Großartig! Erleben Sie durch Renovierungsarbeiten von Ds-Steinteppich .Sie
-                        halfen mir bei der Entscheidung, welches Material und welche Farben ich verwenden sollte, und
-                        sie sagten mir, wie
-                        der ganze Prozess funktioniert. Es gab einen sehr netten und hilfsbereiten Kundenservice.
-                        Vielen Dank! Ich bin sehr zufrieden mit dem Service und kann es kaum erwarten, Platz zu nehmen
-                        mehr aufträge mit ihnen.
-                      </p>
-                    </div>
-                  </div>
-
-                  <footer class="mt-8 text-sm text-gray-500">
-                    &mdash; Ludwig Adenauer
-                  </footer>
-                </blockquote>
-              </div>
+                <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                fill-rule="evenodd"
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                clip-rule="evenodd"
+                            />
+                        </svg>
+                        <span class="sr-only">Facebook page</span>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                fill-rule="evenodd"
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                clip-rule="evenodd"
+                            />
+                        </svg>
+                        <span class="sr-only">Instagram page</span>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                            />
+                        </svg>
+                        <span class="sr-only">Twitter page</span>
+                    </a>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+            <div class="container flex flex-wrap items-center justify-between mx-auto">
+                <a href="index.html" class="flex items-center">
+                    <img src="https://ds-steinteppich.de/img/logo.png" class="h-6 mr-3 sm:h-9" alt="Logo" />
+                </a>
+                <div class="flex md:order-2">
+                    <button
+                        type="button"
+                        onclick="location.href=`https://wa.me/4915117269232?text=Habe%20Interesse%20bitte%20um%20R%C3%BCckruf!`"
+                        class="text-white bg-[#8B4816] hover:bg-[#C97F2B] focus:ring-4 focus:outline-none focus:ring-[#F0B637] font-medium rounded text-sm px-5 py-2.5 text-center mr-3 md:mr-0 shadow"
+                    >
+                        <i class="fa fa-whatsapp"></i> WhatsApp
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <section class="mb-20">
+            <div class="relative overflow-hidden bg-no-repeat bg-cover"><img src="img/hero-1.png" alt="" width="100%" style="width: 100%;" /></div>
 
-      <div class="mt-8 flex justify-center gap-4 lg:hidden">
-        <button aria-label="Previous slide"
-          class="prev-button rounded-full border border[#DF9E33] p-4 text[#DF9E33] hover:bg[#DF9E33] hover:text-white">
-          <svg class="h-5 w-5 -rotate-180 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-          </svg>
-        </button>
-        <button aria-label="Next slide"
-          class="next-button rounded-full border border[#DF9E33] p-4 text[#DF9E33] hover:bg[#DF9E33] hover:text-white">
-          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
-  <section class="pt-32 pb-20 mb-20 text-gray-800 text-center  bg-[url('img/bg3.png')] bg-cover bg-fixed">
-    <!-- Jumbotron -->
-    <div class="container mx-auto xl:px-32 text-center">
-      <div class="grid lg:grid-cols-1 flex items-center">
-        <div class="mb-12 lg:mb-0">
-          <div class="relative block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14"
-            style="background: hsla(0, 0%, 100%, 0.22); backdrop-filter: blur(30px); z-index: 1">
-            <h2 class="text-3xl font-bold mb-20 display-5 text-white">Ihr Partner, wenn es um fugenlosen Fußboden geht
+            <div class="container mx-auto px-6 md:px-12 xl:px-32">
+                <div class="text-center text-gray-800">
+                    <div class="block rounded-lg shadow-lg px-6 py-12 md:py-16 md:px-12 -mt-14 lg:-mt-48" style="background: hsla(0, 0%, 100%, 0.7); backdrop-filter: blur(20px);">
+                        <h1 class="text-2xl md:text-6xl xl:text-5xl font-bold tracking-tight mb-12">
+                            "Von langweilig bis luxuriös: <br />
+                            Verwandeln Sie Ihr Zuhause mit
+                            <span class="text-[#DF9E33]">Steinteppich."</span>
+                        </h1>
+                        <a
+                            class="inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
+                            data-mdb-ripple="true"
+                            data-mdb-ripple-color="light"
+                            href="#!"
+                            role="button"
+                        >
+                            Melde dich
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-20">
+            <div class="px-4 text-center md:w-10/12 xl:w-10/12 mx-auto">
+                <h1 class="mb-4 text-4xl font-medium"><span class="text-[#DF9E33]"> Die richtige</span> Wahl für Renovierung und Neugestaltung</h1>
+                <p class="mb-4 text-xl">
+                    Steinteppich ist in einer breiten Palette von Farben und Stilen erhältlich, von neutraler Erde Töne zu kräftigen und lebendigen Farbtönen. Die Steine können auch in Steinteppich verwendet werden variieren in Größe und
+                    Form, was einen einzigartigen und strukturierten Look erzeugen kann.
+                </p>
+            </div>
+            <div class="grid grid-rows lg:grid-cols-2 gap-4 px-4 md:w-10/12 xl:w-10/12 mx-auto pt-4">
+                <div class="text-center mx-auto"><img class="shadow-lg" style="border-radius: 10% 10% 1% 10%;" src="img/feature-1.png" alt="Image" /></div>
+
+                <div>
+                    <h1 class="mb-4 text-2xl font-medium">"Keine Zeit zu verlieren? Wählen Sie Ihren Traumboden in nur 3 Minuten."</h1>
+                    <ul>
+                        <li class="text-xl mb-4"><i class="fa fa-check text-2xl text-[#DF9E33]"></i> Langlebigkeit</li>
+                        <li class="text-xl mb-4"><i class="fa fa-check text-2xl text-[#DF9E33]"></i> Pflegeleichtigkeit</li>
+                        <li class="text-xl mb-4"><i class="fa fa-check text-2xl text-[#DF9E33]"></i> ein nahtloser Look</li>
+                        <li class="text-xl mb-4"><i class="fa fa-check text-2xl text-[#DF9E33]"></i> extrem rutschfest</li>
+                        <li class="text-xl mb-4"><i class="fa fa-check text-2xl text-[#DF9E33]"></i> Frostbeständig</li>
+                        <li class="text-xl mb-4"><i class="fa fa-check text-2xl text-[#DF9E33]"></i> ökologisch & nachhaltig (95% Naturstein)</li>
+                        <li class="text-xl mb-4"><i class="fa fa-check text-2xl text-[#DF9E33]"></i> UV-beständig</li>
+                    </ul>
+
+                    <a
+                        class="inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light"
+                        href="#!"
+                        role="button"
+                    >
+                        Holen Sie sich jetzt <br />
+                        professionelle Antworten.
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="overflow-hidden">
+            <div class="px-4 text-center md:w-10/12 xl:w-10/12 mx-auto">
+                <h1 class="mb-4 text-3xl lg:text-4xl font-medium">
+                    Die Steinteppiche von <span class="text-[#DF9E33]">DS-Steinteppich</span>
+                    sind extrem
+                </h1>
+                <p class="mb-4 text-xl">
+                    natürlich mit Langlebigkeit, Widerstandsfähigkeit und Vielfalt verbunden. Diese Charakterzüge bleiben bei der Treppenrenovierung mit dem Stein erhalten Teppich. Gerade im Außenbereich ist die Verwendung von Marmorkies
+                    für Treppen ideal Renovierung und Gestaltung. Die Verwendung von UV-beständigen Bindemitteln ist wichtig z Outdoor-Einsatz. Herkömmliche Bindemittel würden dadurch vergilben dauerhafte Sonneneinstrahlung, so dass ein
+                    leicht gelblicher Schimmer entstehen würde über die Treppe verteilt. UV-beständige Bindemittel sind jedoch der Aufgabe gewachsen.
+                </p>
+            </div>
+            <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
+                <div class="-m-1 flex flex-wrap md:-m-2 justify-center">
+                    <div class="flex w-1/2 lg:w-1/3 flex-wrap group relative">
+                        <div class="w-full p-1 md:p-2">
+                            <figure class="relative max-w-sm transition-all duration-300 cursor-pointer hover:drop-shadow-2xl">
+                                <a href="index1.html">
+                                    <img class="rounded-lg" src="img/services/1.png" alt="image description" />
+                                </a>
+                                <figcaption class="absolute bottom-2 mx-auto bg-white w-full shadow pb-2">
+                                    <p class="text-2xl text-black text-center font-bold">Treppen</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="flex w-1/2 lg:w-1/3 flex-wrap group relative">
+                        <div class="w-full p-1 md:p-2">
+                            <figure class="relative max-w-sm transition-all duration-300 cursor-pointer hover:drop-shadow-2xl">
+                                <a href="index2.html">
+                                    <img class="rounded-lg" src="img/services/2.png" alt="image description" />
+                                </a>
+                                <figcaption class="absolute bottom-2 mx-auto bg-white w-full shadow pb-2">
+                                    <p class="text-2xl text-black text-center font-bold">Terrassen</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="flex w-1/2 lg:w-1/3 flex-wrap group relative">
+                        <div class="w-full p-1 md:p-2">
+                            <figure class="relative max-w-sm transition-all duration-300 cursor-pointer hover:drop-shadow-2xl">
+                                <a href="index3.html">
+                                    <img class="rounded-lg" src="img/services/3.png" alt="image description" />
+                                </a>
+                                <figcaption class="absolute bottom-2 mx-auto bg-white w-full shadow pb-2">
+                                    <p class="text-2xl text-black text-center font-bold">Exterieur</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="flex w-1/2 lg:w-1/3 flex-wrap group relative">
+                        <div class="w-full p-1 md:p-2">
+                            <figure class="relative max-w-sm transition-all duration-300 cursor-pointer hover:drop-shadow-2xl">
+                                <a href="index4.html">
+                                    <img class="rounded-lg" src="img/services/6.png" alt="image description" />
+                                </a>
+                                <figcaption class="absolute bottom-2 mx-auto bg-white w-full shadow pb-2">
+                                    <p class="text-2xl text-black text-center font-bold">Balkone</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="flex w-1/1 lg:w-1/3 flex-wrap group relative">
+                        <div class="w-full p-1 md:p-2">
+                            <figure class="relative max-w-sm transition-all duration-300 cursor-pointer hover:drop-shadow-2xl">
+                                <a href="index5.html">
+                                    <img class="rounded-lg" src="img/services/7.png" alt="image description" />
+                                </a>
+                                <figcaption class="absolute bottom-2 mx-auto bg-white w-full shadow pb-2">
+                                    <p class="text-2xl text-black text-center font-bold">Innenbereiche</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-10">
+            <center>
+                <a
+                    class="inline-block px-7 py-3 mb-2 mt-16 text-center bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    href="#!"
+                    role="button"
+                >
+                    Expertenrat einholen &nbsp; <i class="fa fa-arrow-right"></i>
+                </a>
+            </center>
+        </section>
+        <section class="mb-20 bg-[url('img/bg2.png')] bg-cover bg-fixed">
+            <div class="container mx-auto p-4 my-6 space-y-2 text-center">
+                <h2 class="text-4xl font-bold">Alle Vorteile auf einen Blick</h2>
+            </div>
+            <div class="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="flex flex-col items-center p-4 rounded-tl-3xl bg-[#FDF4DB] hover:shadow-lg shadow-orange-500">
+                    <img src="img/icon/1.png" class="w-50 h-50" />
+
+                    <h3 class="my-3 text-3xl font-semibold">Langlebigkeit</h3>
+                    <div class="space-y-1 leading-tight text-center">
+                        <p>
+                            Stein ist ein natürliches und langlebiges Material, das Jahrzehnte oder sogar überdauern kann Jahrhundert mit der richtigen Pflege und Wartung. Im Gegensatz zu einigen anderen Bodenbelägen Materialien wie Teppich
+                            oder Vinyl, Steinböden müssen nicht ersetzt werden oft und kann starkem Fußgängerverkehr und Verschleiß im Laufe der Zeit standhalten.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-[#FDF4DB] hover:shadow-lg shadow-orange-500">
+                    <img src="img/icon/2.png" class="w-50 h-50" />
+                    <h3 class="my-3 text-3xl font-semibold">Pflegeleichtigkeit</h3>
+                    <div class="space-y-1 leading-tight text-center">
+                        <p>
+                            kann ohne herkömmliche Fugen installiert werden, die das verhindern können Ansammlung von Schmutz und Verfärbungen. Denn herkömmliche Gelenke können das fangen Schmutz und Dreck auf, die schwer zu reinigen sind
+                            und zu Verfärbungen führen können im Laufe der Zeit.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center p-4 rounded-tr-3xl bg-[#FDF4DB] hover:shadow-lg shadow-orange-500">
+                    <img src="img/icon/3.png" class="w-50 h-50" />
+                    <h3 class="my-3 text-3xl font-semibold">UV-beständig</h3>
+                    <div class="space-y-1 leading-tight text-center">
+                        <p>Sonnenbeständiger Steinteppich: UV-beständiger Bodenbelag für jeden Raum.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center p-4 rounded-bl-3xl bg-[#FDF4DB] hover:shadow-lg shadow-orange-500">
+                    <img src="img/icon/4.png" class="w-50 h-50" />
+                    <h3 class="my-3 text-3xl font-semibold">Anti-Rutsch</h3>
+                    <div class="space-y-1 leading-tight text-center">
+                        <p>Im Vergleich zu anderen vergleichbaren glatten Bodenbelägen, wie Parkett, Laminat oder Fliesen, Die feinkörnige Struktur des Steinteppichs ist sehr rutschfest.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-[#FDF4DB] hover:shadow-lg shadow-orange-500">
+                    <img src="img/icon/5.png" class="w-50 h-50" />
+                    <h3 class="my-3 text-3xl font-semibold">ein nahtloser Look</h3>
+                    <div class="space-y-1 leading-tight text-center">
+                        <p>Unsere Steinteppiche werden fugenlos verlegt, ohne sichtbare Fugen.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center p-4 rounded-br-3xl bg-[#FDF4DB] hover:shadow-lg shadow-orange-500">
+                    <img src="img/icon/6.png" class="w-50 h-50" />
+                    <h3 class="my-3 text-3xl font-semibold">Frostbeständig</h3>
+                    <div class="space-y-1 leading-tight text-center">
+                        <p>
+                            Steinteppiche können durch die Auswahl einer Steinart frostbeständig gemacht werden natürlich frostbeständig, oder durch Behandlung des Steins mit einer speziellen Beschichtung oder Versiegelung das schützt vor
+                            Frost-Tau-Zyklen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <center>
+                <a
+                    class="inline-block px-7 py-3 mb-2 mt-10 mb-5 text-center bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    href="#!"
+                    role="button"
+                >
+                    mache eine Anfrage &nbsp; <i class="fa fa-arrow-right"></i>
+                </a>
+            </center>
+        </section>
+        <section class="mx-auto py-10 max-w-[85%] lg:max-w-[70%]">
+            <h2 class="text-center text-2xl lg:text-4xl font-semibold text-neutral-very-dark-blue mb-5">
+                In vier Schritten zu Ihrem neuen Traum-Boden
             </h2>
-            <div class="grid md:grid-cols-3 gap-x-6">
-              <div class="mb-12 md:mb-0">
-                <h2 class="text-5xl font-bold text-white mb-4">96%</h2>
-                <h5 class="text-xl font-medium text-white mb-0">zufriedene Kunden</h5>
-              </div>
-
-              <div class="mb-12 md:mb-0">
-                <h2 class="text-5xl font-bold text-white mb-4">24.000+</h2>
-                <h5 class="text-xl font-medium text-white mb-0">m2 Wohnqualität geschaffen</h5>
-              </div>
-
-              <div class="">
-                <h2 class="text-5xl font-bold text-white mb-4">15+</h2>
-                <h5 class="text-xl font-medium text-white mb-0">Jahre Erfahrung</h5>
-              </div>
+            <div class="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:items-center">
+                <article
+                    class="bg-white overflow-hidden relative before:content-[''] before:inset-0 before:-translate-y-[98.5%] before:absolute before:bg-primary-cyan p-7 flex flex-col gap-8 rounded-md shadow-xl sm:col-span-2 lg:row-span-2 lg:col-span-1"
+                >
+                    <div>
+                        <h3 class="mb-1 text-xl text-neutral-very-dark-blue font-semibold">
+                            Kontaktaufnahme
+                        </h3>
+                        <p class="text-sm text-neutral-grayish-blue">
+                            Sie senden uns Ihre Vorstellungen und Wünsche. Dies dauert mit unserem interaktiven Anfrage-Tool nur 3 Minuten.
+                        </p>
+                    </div>
+                    <div class="self-end">
+                        <i class="fa fa-users text-5xl text-[#DF9E33]"></i>
+                    </div>
+                </article>
+                <article
+                    class="bg-white overflow-hidden relative before:content-[''] before:inset-0 before:-translate-y-[98.5%] before:absolute before:bg-primary-red p-7 flex flex-col gap-8 rounded-md shadow-xl sm:col-start-1 lg:row-start-1 lg:col-start-2"
+                >
+                    <div>
+                        <h3 class="mb-1 text-xl text-neutral-very-dark-blue font-semibold">
+                            Beratung am Telefon
+                        </h3>
+                        <p class="text-sm text-neutral-grayish-blue">
+                            Wir melden uns bei Ihnen zu Ihrem Wunschtermin. Erste individuelle Fragen klären wir gerne direkt am Telefon mit Ihnen.
+                        </p>
+                    </div>
+                    <div class="self-end">
+                        <i class="fa fa-phone-square text-5xl text-[#DF9E33]"></i>
+                    </div>
+                </article>
+                <article
+                    class="bg-white overflow-hidden relative before:content-[''] before:inset-0 before:-translate-y-[98.5%] before:absolute before:bg-primary-orange p-7 flex flex-col gap-8 rounded-md shadow-xl sm:row-start-2 sm:col-start-2 lg:row-start-2 lg:col-start-2"
+                >
+                    <div>
+                        <h3 class="mb-1 text-xl text-neutral-very-dark-blue font-semibold">
+                            Vor Ort Termin
+                        </h3>
+                        <p class="text-sm text-neutral-grayish-blue">
+                            Zum genauen Aufmaß und Absprache aller nötigen Details besuchen wir Sie nach Terminabsprache bei Ihnen zu Hause.
+                        </p>
+                    </div>
+                    <div class="self-end">
+                        <i class="fa fa-map-marker text-5xl text-[#DF9E33]"></i>
+                    </div>
+                </article>
+                <article
+                    class="bg-white overflow-hidden relative before:content-[''] before:inset-0 before:-translate-y-[98.5%] before:absolute before:bg-primary-blue p-7 flex flex-col gap-8 rounded-md shadow-xl sm:col-span-2 lg:row-span-2 lg:col-start-3"
+                >
+                    <div>
+                        <h3 class="mb-1 text-xl text-neutral-very-dark-blue font-semibold">
+                            Angebotserstellung
+                        </h3>
+                        <p class="text-sm text-neutral-grayish-blue">
+                            Sie erhalten ein detailliertes Angebot zum Festpreis für Ihren neuen Traumboden. Gerne planen wir auch optionale Erweiterungen ein.
+                        </p>
+                    </div>
+                    <div class="self-end">
+                        <i class="fa fa-file-text text-5xl text-[#DF9E33]"></i>
+                    </div>
+                </article>
             </div>
-            <a class="inline-block px-7 py-3 mb-2 mt-10 mb-5 text-center bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
-              data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Hier lang zu Ihrem
-              Traumboden &nbsp; <i class="fa fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Jumbotron -->
+            <h2 class="text-center text-xl lg:text-3xl font-semibold text-neutral-very-dark-blue mt-10 mb-3">
+                Ihre Suche beginnt und endet bei uns
+            </h2>
+            <center>
+                <a
+                    class="inline-block px-7 py-3 mb-2 mt-10 mb-5 text-center bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    href="#!"
+                    role="button"
+                >
+                    kontaktiere uns jetzt &nbsp; <i class="fa fa-arrow-right"></i>
+                </a>
+            </center>
+        </section>
+        <section class="bg-[url('img/bg2.png')] bg-cover bg-fixed pb-5 pt-20">
+            <div class="hero container max-w-screen-lg mx-auto text-center">
+                <img src="img/stone-carpet-reviews.png" onclick="location.href='#reviews'" alt="screenshot" />
+            </div>
+        </section>
+        <section class="bg-[url('img/bg2.png')] bg-cover bg-fixed" id="reviews">
+            <div class="mx-auto max-w-[1340px] px-4 py-16 sm:px-6 sm:py-24 lg:mr-0 lg:pl-8 lg:pr-0">
+                <div class="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16">
+                    <div class="max-w-xl text-center sm:text-left">
+                        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+                            Verlassen Sie sich nicht nur auf uns...
+                            <br class="hidden sm:block lg:hidden" />
+                            Lesen Sie die Bewertungen unserer Kunden
+                        </h2>
+                        <div class="hidden lg:mt-8 lg:flex lg:gap-4">
+                            <button class="prev-button rounded-full border border-[#DF9E33] p-3 text-[#DF9E33] hover:bg-[#DF9E33] hover:text-white">
+                                <span class="sr-only">Previous Slide</span>
+                                <svg class="h-5 w-5 -rotate-180 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                </svg>
+                            </button>
 
-  <section class="mb-32 text-gray-800 text-center lg:text-left">
-    <div class="block rounded-lg shadow-lg pl-10 pr-10">
-      <div class="flex flex-wrap items-center">
-        <div class="block w-full lg:flex grow-0 shrink-0 basis-auto lg:w-6/12 xl:w-4/12">
-          <img src="img/DS3.png" alt="" class="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" />
-        </div>
-        <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
-          <div class="px-6 py-12 md:px-12">
-            <h2 class="text-3xl lg:text-5xl font-bold mb-4 text-[#DF9E33] display-5">Wer ist DS steinteppich?</h2>
-            <p class="text-gray-500 mb-8 text-md">
-              Nunc tincidunt vulputate elit. Mauris varius purus malesuada neque iaculis
-              malesuada. Aenean gravida magna orci, non efficitur est porta id. Donec magna
-              diam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae iusto ducimus eius architecto
-              quibusdam assumenda voluptatum. Assumenda repellendus quod vero consequuntur ducimus fugit inventore, quae
-              nostrum laudantium. Cumque ipsum doloribus tempora hic voluptatibus nobis nisi, distinctio autem,
-              consectetur iusto molestiae quasi enim fugiat deserunt sapiente ex illum sint perferendis. Iure aspernatur
-              soluta reiciendis fuga odio quam repellat voluptates consequuntur dolore vero. Voluptatum, quos, maxime
-              delectus nisi voluptas qui laudantium aperiam optio amet quaerat ea. Architecto possimus fuga ut
-              consequatur similique ea dolor velit, placeat eligendi quaerat deserunt, harum adipisci minima distinctio
-              sequi, officia voluptates magnam minus asperiores esse veniam repellendus odit perferendis tempora.
-              Deserunt a voluptatibus temporibus officiis eligendi officia quo dicta fugit cupiditate? Quia earum
-              expedita iusto accusantium, tempora dignissimos consequuntur adipisci labore perferendis, illo omnis
-              aperiam. At, cumque ab reiciendis aam dicta quam, perspiciatis quia soluta hic! Officia reiciendis
-              corporis minus illum placeat molestiae atque, et dolores autem, quia ea, possimus laboriosam suscipit
-              obcaecati accusamus facilis tempora tempore dolorem est nulla nobis? Labore doloremque atque animi
-              expedita eius repellendus explicabo nam provident recusandae pariatur molestiae facere possimus magni
-              perferendis eaque cupiditate quam illo placeat rerum, perspiciatis debitis incidunt.
-            </p>
-          </div>
-        </div>
+                            <button class="next-button rounded-full border border-[#DF9E33] p-3 text-[#DF9E33] hover:bg-[#DF9E33] hover:text-white">
+                                <span class="sr-only">Next Slide</span>
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
 
-      </div>
-      <center>
-        <a class="inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 lg:mb-5 bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
-          data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Jetzt Anfrage stellen <i
-            class="fa fa-arrow-right"></i></a>
-      </center>
-    </div>
+                    <div class="-mx-6 lg:col-span-2 lg:mx-0">
+                        <div class="swiper-container !overflow-hidden">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <blockquote class="flex h-full flex-col justify-between bg-white p-12">
+                                        <div>
+                                            <div class="flex gap-0.5 text-green-500">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
 
-  </section>
-  <section class="mb-20 bg-[url('img/bg5.png')] bg-cover bg-fixed text-gray-100 ">
-    <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
-      <p class="p-2 text-sm font-medium tracking-wider text-center uppercase">FAQs</p>
-      <h2 class="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Häufig gestellte Fragen
-      </h2>
-      <div class="flex justify-center items-start my-2">
-        <div class="w-full sm:w-10/12 md:w-1/2 my-1">
-          <ul class="flex flex-col">
-            <li class="bg-white my-2 shadow-lg" x-data="accordion(1)">
-              <h2 @click="handleClick()"
-                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
-                <span>Warum Sie sich für uns DS Steinteppich entscheiden sollten.</span>
-                <svg :class="handleRotate()"
-                  class="fill-current text-[#DF9E33] h-6 w-6 transform transition-transform duration-500"
-                  viewBox="0 0 20 20">
-                  <path
-                    d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
-                  </path>
-                </svg>
-              </h2>
-              <div x-ref="tab" :style="handleToggle()"
-                class="border-l-2 border-[#DF9E33] overflow-hidden max-h-0 duration-500 transition-all">
-                <p class="p-3 text-gray-900">
-                  Jahrelange Erfahrung haben zu Sicherheit und bester Qualität geführt. <br>
-                  DS Steinteppich ist in Deutschland einer der bekanntesten Namen für Treppen,
-                  Stein, Teppich und Bodenbeläge. Mit mehr als 10 Jahren Erfahrung in
-                  Planung, Renovierung, Verlegung und Reparatur von Natursteinteppichen aller Art,
-                  Unser Unternehmen ist ein zuverlässiger Partner für Sie. Sie können auch stilvolle Mikro-
-                  Zementböden für Ihr Zuhause oder zur Verbesserung des Aussehens eines Unternehmens von uns.
-                  Von der Beratung bis zur Sicherstellung, dass die Arbeit richtig ausgeführt wird, helfen wir unseren
-                  Kunden durch den gesamten Bau- oder Umbauprozess. Qualität u
-                  Service sind immer die wichtigsten Dinge. Individuelle Kundenprojekte
-                  werden von speziell ausgebildeten und zertifizierten Fachkräften durchgeführt, die ihre Hand anlegen
-                  Kenntnis von Steinteppichen auf sorgfältige Weise.
-                </p>
-              </div>
-            </li>
-            <li class="bg-white my-2 shadow-lg" x-data="accordion(2)">
-              <h2 @click="handleClick()"
-                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
-                <span>Warum es wichtig ist, dass Sie Ihren Steinteppich von Fachleuten verlegen lassen, anstatt es
-                  selbst zu versuchen:</span>
-                <svg :class="handleRotate()"
-                  class="fill-current text-[#DF9E33] h-6 w-6 transform transition-transform duration-500"
-                  viewBox="0 0 20 20">
-                  <path
-                    d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
-                  </path>
-                </svg>
-              </h2>
-              <div x-ref="tab" :style="handleToggle()"
-                class="border-l-2 border-[#DF9E33] overflow-hidden max-h-0 duration-500 transition-all">
-                <p class="p-3 text-gray-900">
-                  1. Erfahrung und Fachwissen: Professionelle Steinteppichverleger haben Jahre
-                  Erfahrung und Ausbildung, die es ihnen ermöglichen, die Nuancen zu verstehen
-                  des Installationsprozesses. Sie haben das Wissen und die Expertise
-                  erforderlich, um die Oberfläche richtig vorzubereiten, die Materialien zu mischen und zu installieren
-                  Steinteppich, um ein glattes und gleichmäßiges Finish zu gewährleisten.
-                  <br>
-                  2. Richtige Ausrüstung und Werkzeuge: Die Verlegung von Steinteppichen erfordert Spezialisten
-                  Ausrüstung und Werkzeuge, die dem Durchschnittsbürger möglicherweise nicht ohne Weiteres zur Verfügung
-                  stehen
-                  Hausbesitzer. Professionelle Installateure haben Zugriff auf das Notwendige
-                  Ausrüstung und Werkzeuge, die es ihnen ermöglichen, die Installation abzuschließen
-                  effizient und effektiv.
-                  <br>
-                  3. Qualität der Arbeit: Professionelle Verleger von Steinteppichen sind stolz auf ihre Qualität
-                  arbeiten und sich bemühen, die Installation von höchster Qualität zu liefern. Sie verwenden die
-                  beste Materialien und Techniken, um sicherzustellen, dass Ihr Steinteppich gut aussieht
-                  schön und halten viele Jahre.
-                  <br>
-                  4. Garantie: Professionelle Steinteppichverleger bieten in der Regel eine Garantie auf
-                  ihre Arbeit, die Ihnen zusätzliche Sicherheit gibt. Im Unwahrscheinlichen
-                  Falls bei der Installation etwas schief geht, können Sie sich ausruhen
-                  versichert, dass sich der Installateur darum kümmern wird.
-                </p>
-              </div>
-            </li>
-            <li class="bg-white my-2 shadow-lg" x-data="accordion(3)">
-              <h2 @click="handleClick()"
-                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
-                <span>Was sind die mehreren Farbmuster?</span>
-                <svg :class="handleRotate()"
-                  class="fill-current text-[#DF9E33] h-6 w-6 transform transition-transform duration-500"
-                  viewBox="0 0 20 20">
-                  <path
-                    d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
-                  </path>
-                </svg>
-              </h2>
-              <div x-ref="tab" :style="handleToggle()"
-                class="border-l-2 border-[#DF9E33] overflow-hidden max-h-0 duration-500 transition-all">
-                <p class="p-3 text-gray-900">
-                  1. Botticino White <br>
-                  2. Aurora Breach <br>
-                  3. Businessgrau <br>
-                  4. Carnic Grey <br>
-                  5. Mahogany Brown <br>
-                </p>
-              </div>
-            </li>
-            <!-- <li class="bg-white my-2 shadow-lg" x-data="accordion(4)">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+                                            </div>
+
+                                            <div class="mt-4">
+                                                <p class="text-2xl font-bold text-[#DF9E33] sm:text-3xl">
+                                                    ausgezeichnete Arbeit
+                                                </p>
+
+                                                <p class="mt-4 leading-relaxed text-gray-500">
+                                                    Ich bin sehr zufrieden mit Ihrem Service und der Art und Weise, wie Sie Geschäfte machen. Meine Treppe sieht aus unglaublich und ich kann mit Sicherheit sagen, dass es nicht meine letzte
+                                                    Bestellung bei euch war
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <footer class="mt-8 text-sm text-gray-500">
+                                            &mdash; cludia A.
+                                        </footer>
+                                    </blockquote>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <blockquote class="flex h-full flex-col justify-between bg-white p-12">
+                                        <div>
+                                            <div class="flex gap-0.5 text-green-500">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+                                            </div>
+
+                                            <div class="mt-4">
+                                                <p class="text-2xl font-bold text-[#DF9E33] sm:text-3xl">
+                                                    Gute Arbeit
+                                                </p>
+
+                                                <p class="mt-4 leading-relaxed text-gray-500">
+                                                    Ich hatte eine großartige Erfahrung mit euch, und euer Kundenservice war großartig. Ich liebe meine Treppe jetzt noch mehr, als ich es vor dem DS-Steinteppich gemacht habe Stein. Ich bin
+                                                    dir sehr dankbar für alles. zeigt mir nach rechts Richtung Ich bin sehr glücklich, vielen Dank
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <footer class="mt-8 text-sm text-gray-500">
+                                            &mdash; Adisa B.
+                                        </footer>
+                                    </blockquote>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <blockquote class="flex h-full flex-col justify-between bg-white p-12">
+                                        <div>
+                                            <div class="flex gap-0.5 text-green-500">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+                                            </div>
+
+                                            <div class="mt-4">
+                                                <p class="text-2xl font-bold text-[#DF9E33] sm:text-3xl">
+                                                    herausragende Arbeit
+                                                </p>
+
+                                                <p class="mt-4 leading-relaxed text-gray-500">
+                                                    Vielen Dank für all Ihren großartigen Service. Du hast meine Treppe pünktlich gemacht und auf so ordentliche Weise. Das Team, das mit mir gearbeitet hat, war professionell. Ich bin sehr
+                                                    glücklich mit dem, was du getan hast.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <footer class="mt-8 text-sm text-gray-500">
+                                            &mdash; Michael Kuchs
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                                <div class="swiper-slide">
+                                    <blockquote class="flex h-full flex-col justify-between bg-white p-12">
+                                        <div>
+                                            <div class="flex gap-0.5 text-green-500">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                                    />
+                                                </svg>
+                                            </div>
+
+                                            <div class="mt-4">
+                                                <p class="text-2xl font-bold text-[#DF9E33] sm:text-3xl">
+                                                    beste Arbeit
+                                                </p>
+
+                                                <p class="mt-4 leading-relaxed text-gray-500">
+                                                    Großartig! Erleben Sie durch Renovierungsarbeiten von Ds-Steinteppich .Sie halfen mir bei der Entscheidung, welches Material und welche Farben ich verwenden sollte, und sie sagten mir, wie
+                                                    der ganze Prozess funktioniert. Es gab einen sehr netten und hilfsbereiten Kundenservice. Vielen Dank! Ich bin sehr zufrieden mit dem Service und kann es kaum erwarten, Platz zu nehmen
+                                                    mehr aufträge mit ihnen.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <footer class="mt-8 text-sm text-gray-500">
+                                            &mdash; Ludwig Adenauer
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-center gap-4 lg:hidden">
+                    <button aria-label="Previous slide" class="prev-button rounded-full border border[#DF9E33] p-4 text[#DF9E33] hover:bg[#DF9E33] hover:text-white">
+                        <svg class="h-5 w-5 -rotate-180 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                        </svg>
+                    </button>
+                    <button aria-label="Next slide" class="next-button rounded-full border border[#DF9E33] p-4 text[#DF9E33] hover:bg[#DF9E33] hover:text-white">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="pt-32 pb-20 mb-20 text-gray-800 text-center bg-[url('img/bg3.png')] bg-cover bg-fixed">
+            <!-- Jumbotron -->
+            <div class="container mx-auto xl:px-32 text-center">
+                <div class="grid lg:grid-cols-1 flex items-center">
+                    <div class="mb-12 lg:mb-0">
+                        <div class="relative block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14" style="background: hsla(0, 0%, 100%, 0.22); backdrop-filter: blur(30px); z-index: 1;">
+                            <h2 class="text-3xl font-bold mb-20 display-5 text-white">Ihr Partner, wenn es um fugenlosen Fußboden geht</h2>
+                            <div class="grid md:grid-cols-3 gap-x-6">
+                                <div class="mb-12 md:mb-0">
+                                    <h2 class="text-5xl font-bold text-white mb-4">96%</h2>
+                                    <h5 class="text-xl font-medium text-white mb-0">zufriedene Kunden</h5>
+                                </div>
+
+                                <div class="mb-12 md:mb-0">
+                                    <h2 class="text-5xl font-bold text-white mb-4">24.000+</h2>
+                                    <h5 class="text-xl font-medium text-white mb-0">m2 Wohnqualität geschaffen</h5>
+                                </div>
+
+                                <div class="">
+                                    <h2 class="text-5xl font-bold text-white mb-4">15+</h2>
+                                    <h5 class="text-xl font-medium text-white mb-0">Jahre Erfahrung</h5>
+                                </div>
+                            </div>
+                            <a
+                                class="inline-block px-7 py-3 mb-2 mt-10 mb-5 text-center bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
+                                data-mdb-ripple="true"
+                                data-mdb-ripple-color="light"
+                                href="#!"
+                                role="button"
+                            >
+                                Hier lang zu Ihrem Traumboden &nbsp; <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Jumbotron -->
+
+        <section class="mb-32 text-gray-800 text-center lg:text-left">
+            <div class="block rounded-lg shadow-lg pl-10 pr-10">
+                <div class="flex flex-wrap items-center">
+                    <div class="block w-full lg:flex grow-0 shrink-0 basis-auto lg:w-6/12 xl:w-4/12">
+                        <img src="img/DS3.png" alt="" class="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" />
+                    </div>
+                    <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
+                        <div class="px-6 py-12 md:px-12">
+                            <h2 class="text-3xl lg:text-5xl font-bold mb-4 text-[#DF9E33] display-5">Wer ist DS steinteppich?</h2>
+                            <p class="text-gray-500 mb-8 text-md">
+                                Nunc tincidunt vulputate elit. Mauris varius purus malesuada neque iaculis malesuada. Aenean gravida magna orci, non efficitur est porta id. Donec magna diam. Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Quae iusto ducimus eius architecto quibusdam assumenda voluptatum. Assumenda repellendus quod vero consequuntur ducimus fugit inventore, quae nostrum laudantium. Cumque ipsum doloribus
+                                tempora hic voluptatibus nobis nisi, distinctio autem, consectetur iusto molestiae quasi enim fugiat deserunt sapiente ex illum sint perferendis. Iure aspernatur soluta reiciendis fuga odio quam repellat
+                                voluptates consequuntur dolore vero. Voluptatum, quos, maxime delectus nisi voluptas qui laudantium aperiam optio amet quaerat ea. Architecto possimus fuga ut consequatur similique ea dolor velit, placeat
+                                eligendi quaerat deserunt, harum adipisci minima distinctio sequi, officia voluptates magnam minus asperiores esse veniam repellendus odit perferendis tempora. Deserunt a voluptatibus temporibus officiis
+                                eligendi officia quo dicta fugit cupiditate? Quia earum expedita iusto accusantium, tempora dignissimos consequuntur adipisci labore perferendis, illo omnis aperiam. At, cumque ab reiciendis aam dicta quam,
+                                perspiciatis quia soluta hic! Officia reiciendis corporis minus illum placeat molestiae atque, et dolores autem, quia ea, possimus laboriosam suscipit obcaecati accusamus facilis tempora tempore dolorem est
+                                nulla nobis? Labore doloremque atque animi expedita eius repellendus explicabo nam provident recusandae pariatur molestiae facere possimus magni perferendis eaque cupiditate quam illo placeat rerum,
+                                perspiciatis debitis incidunt.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <center>
+                    <a
+                        class="inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 lg:mb-5 bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light"
+                        href="#!"
+                        role="button"
+                    >
+                        Jetzt Anfrage stellen <i class="fa fa-arrow-right"></i>
+                    </a>
+                </center>
+            </div>
+        </section>
+        <section class="mb-20 bg-[url('img/bg5.png')] bg-cover bg-fixed text-gray-100">
+            <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
+                <p class="p-2 text-sm font-medium tracking-wider text-center uppercase">FAQs</p>
+                <h2 class="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Häufig gestellte Fragen</h2>
+                <div class="flex justify-center items-start my-2">
+                    <div class="w-full sm:w-10/12 md:w-1/2 my-1">
+                        <ul class="flex flex-col">
+                            <li class="bg-white my-2 shadow-lg" x-data="accordion(1)">
+                                <h2 @click="handleClick()" class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
+                                    <span>Warum Sie sich für uns DS Steinteppich entscheiden sollten.</span>
+                                    <svg :class="handleRotate()" class="fill-current text-[#DF9E33] h-6 w-6 transform transition-transform duration-500" viewBox="0 0 20 20">
+                                        <path
+                                            d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"
+                                        ></path>
+                                    </svg>
+                                </h2>
+                                <div x-ref="tab" :style="handleToggle()" class="border-l-2 border-[#DF9E33] overflow-hidden max-h-0 duration-500 transition-all">
+                                    <p class="p-3 text-gray-900">
+                                        Jahrelange Erfahrung haben zu Sicherheit und bester Qualität geführt. <br />
+                                        DS Steinteppich ist in Deutschland einer der bekanntesten Namen für Treppen, Stein, Teppich und Bodenbeläge. Mit mehr als 10 Jahren Erfahrung in Planung, Renovierung, Verlegung und Reparatur von
+                                        Natursteinteppichen aller Art, Unser Unternehmen ist ein zuverlässiger Partner für Sie. Sie können auch stilvolle Mikro- Zementböden für Ihr Zuhause oder zur Verbesserung des Aussehens eines
+                                        Unternehmens von uns. Von der Beratung bis zur Sicherstellung, dass die Arbeit richtig ausgeführt wird, helfen wir unseren Kunden durch den gesamten Bau- oder Umbauprozess. Qualität u Service sind
+                                        immer die wichtigsten Dinge. Individuelle Kundenprojekte werden von speziell ausgebildeten und zertifizierten Fachkräften durchgeführt, die ihre Hand anlegen Kenntnis von Steinteppichen auf
+                                        sorgfältige Weise.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="bg-white my-2 shadow-lg" x-data="accordion(2)">
+                                <h2 @click="handleClick()" class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
+                                    <span>Warum es wichtig ist, dass Sie Ihren Steinteppich von Fachleuten verlegen lassen, anstatt es selbst zu versuchen:</span>
+                                    <svg :class="handleRotate()" class="fill-current text-[#DF9E33] h-6 w-6 transform transition-transform duration-500" viewBox="0 0 20 20">
+                                        <path
+                                            d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"
+                                        ></path>
+                                    </svg>
+                                </h2>
+                                <div x-ref="tab" :style="handleToggle()" class="border-l-2 border-[#DF9E33] overflow-hidden max-h-0 duration-500 transition-all">
+                                    <p class="p-3 text-gray-900">
+                                        1. Erfahrung und Fachwissen: Professionelle Steinteppichverleger haben Jahre Erfahrung und Ausbildung, die es ihnen ermöglichen, die Nuancen zu verstehen des Installationsprozesses. Sie haben das
+                                        Wissen und die Expertise erforderlich, um die Oberfläche richtig vorzubereiten, die Materialien zu mischen und zu installieren Steinteppich, um ein glattes und gleichmäßiges Finish zu gewährleisten.
+                                        <br />
+                                        2. Richtige Ausrüstung und Werkzeuge: Die Verlegung von Steinteppichen erfordert Spezialisten Ausrüstung und Werkzeuge, die dem Durchschnittsbürger möglicherweise nicht ohne Weiteres zur Verfügung
+                                        stehen Hausbesitzer. Professionelle Installateure haben Zugriff auf das Notwendige Ausrüstung und Werkzeuge, die es ihnen ermöglichen, die Installation abzuschließen effizient und effektiv.
+                                        <br />
+                                        3. Qualität der Arbeit: Professionelle Verleger von Steinteppichen sind stolz auf ihre Qualität arbeiten und sich bemühen, die Installation von höchster Qualität zu liefern. Sie verwenden die beste
+                                        Materialien und Techniken, um sicherzustellen, dass Ihr Steinteppich gut aussieht schön und halten viele Jahre.
+                                        <br />
+                                        4. Garantie: Professionelle Steinteppichverleger bieten in der Regel eine Garantie auf ihre Arbeit, die Ihnen zusätzliche Sicherheit gibt. Im Unwahrscheinlichen Falls bei der Installation etwas schief
+                                        geht, können Sie sich ausruhen versichert, dass sich der Installateur darum kümmern wird.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="bg-white my-2 shadow-lg" x-data="accordion(3)">
+                                <h2 @click="handleClick()" class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
+                                    <span>Was sind die mehreren Farbmuster?</span>
+                                    <svg :class="handleRotate()" class="fill-current text-[#DF9E33] h-6 w-6 transform transition-transform duration-500" viewBox="0 0 20 20">
+                                        <path
+                                            d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"
+                                        ></path>
+                                    </svg>
+                                </h2>
+                                <div x-ref="tab" :style="handleToggle()" class="border-l-2 border-[#DF9E33] overflow-hidden max-h-0 duration-500 transition-all">
+                                    <p class="p-3 text-gray-900">
+                                        1. Botticino White <br />
+                                        2. Aurora Breach <br />
+                                        3. Businessgrau <br />
+                                        4. Carnic Grey <br />
+                                        5. Mahogany Brown <br />
+                                    </p>
+                                </div>
+                            </li>
+                            <!-- <li class="bg-white my-2 shadow-lg" x-data="accordion(4)">
               <h2 @click="handleClick()"
                 class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer text-[#DF9E33]">
                 <span>When will my order arrive?</span>
@@ -868,539 +840,530 @@
                 </p>
               </div>
             </li> -->
-          </ul>
-        </div>
-      </div>
+                        </ul>
+                    </div>
+                </div>
 
-      <a class="inline-block px-7 py-3 mb-2 mt-10 mb-5 text-center bg-[transparent] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
-        data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Jetzt Anfrage stellen &nbsp; <i
-          class="fa fa-arrow-right"></i></a>
-    </div>
-  </section>
-
-  <section class="mb-32 text-gray-800">
-    <style>
-      .zoom:hover img {
-        transform: scale(1.1);
-      }
-    </style>
-
-    <h2 class="text-3xl font-bold text-center mb-12">
-      Mehrere <b class="text-[#DF9E33]"> Farbmuster</b>
-    </h2>
-    <div class="grid lg:grid-cols-3 gap-6 lg:mr-4 lg:ml-4">
-      <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
-        style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-        <img src="img/stones/1.png" class="w-full transition duration-300 ease-linear align-middle" />
-        <a href="#!">
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.3)">
-            <div class="flex justify-start items-end h-full">
-              <h5 class="text-lg font-bold text-white m-6">Bianco Botticino</h5>
+                <a
+                    class="inline-block px-7 py-3 mb-2 mt-10 mb-5 text-center bg-[transparent] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    href="#!"
+                    role="button"
+                >
+                    Jetzt Anfrage stellen &nbsp; <i class="fa fa-arrow-right"></i>
+                </a>
             </div>
-          </div>
-          <div class="hover-overlay">
-            <div
-              class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-              style="background-color: rgba(253, 253, 253, 0.15)"></div>
-          </div>
-        </a>
-      </div>
+        </section>
 
-      <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
-        style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-        <img src="img/stones/2.png" class="w-full transition duration-300 ease-linear align-middle" />
-        <a href="#!">
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.3)">
-            <div class="flex justify-start items-end h-full">
-              <h5 class="text-lg font-bold text-white m-6">Breccia Aurora</h5>
+        <section class="mb-32 text-gray-800">
+            <style>
+                .zoom:hover img {
+                    transform: scale(1.1);
+                }
+            </style>
+
+            <h2 class="text-3xl font-bold text-center mb-12">Mehrere <b class="text-[#DF9E33]"> Farbmuster</b></h2>
+            <div class="grid lg:grid-cols-3 gap-6 lg:mr-4 lg:ml-4">
+                <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                    <img src="img/stones/1.png" class="w-full transition duration-300 ease-linear align-middle" />
+                    <a href="#!">
+                        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed" style="background-color: rgba(0, 0, 0, 0.3);">
+                            <div class="flex justify-start items-end h-full">
+                                <h5 class="text-lg font-bold text-white m-6">Bianco Botticino</h5>
+                            </div>
+                        </div>
+                        <div class="hover-overlay">
+                            <div
+                                class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
+                                style="background-color: rgba(253, 253, 253, 0.15);"
+                            ></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                    <img src="img/stones/2.png" class="w-full transition duration-300 ease-linear align-middle" />
+                    <a href="#!">
+                        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed" style="background-color: rgba(0, 0, 0, 0.3);">
+                            <div class="flex justify-start items-end h-full">
+                                <h5 class="text-lg font-bold text-white m-6">Breccia Aurora</h5>
+                            </div>
+                        </div>
+                        <div class="hover-overlay">
+                            <div
+                                class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
+                                style="background-color: rgba(253, 253, 253, 0.15);"
+                            ></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                    <img src="img/stones/3.png" class="w-full transition duration-300 ease-linear align-middle" />
+                    <a href="#!">
+                        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed" style="background-color: rgba(0, 0, 0, 0.3);">
+                            <div class="flex justify-start items-end h-full">
+                                <h5 class="text-lg font-bold text-white m-6">Businessgrau</h5>
+                            </div>
+                        </div>
+                        <div class="hover-overlay">
+                            <div
+                                class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
+                                style="background-color: rgba(253, 253, 253, 0.15);"
+                            ></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                    <img src="img/stones/4.png" class="w-full transition duration-300 ease-linear align-middle" />
+                    <a href="#!">
+                        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed" style="background-color: rgba(0, 0, 0, 0.3);">
+                            <div class="flex justify-start items-end h-full">
+                                <h5 class="text-lg font-bold text-white m-6">Giallo Mori</h5>
+                            </div>
+                        </div>
+                        <div class="hover-overlay">
+                            <div
+                                class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
+                                style="background-color: rgba(253, 253, 253, 0.15);"
+                            ></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                    <img src="img/stones/5.png" class="w-full transition duration-300 ease-linear align-middle" />
+                    <a href="#!">
+                        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed" style="background-color: rgba(0, 0, 0, 0.3);">
+                            <div class="flex justify-start items-end h-full">
+                                <h5 class="text-lg font-bold text-white m-6">Grigio Bardiglio Dunkelgrau</h5>
+                            </div>
+                        </div>
+                        <div class="hover-overlay">
+                            <div
+                                class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
+                                style="background-color: rgba(253, 253, 253, 0.15);"
+                            ></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                    <img src="img/stones/6.png" class="w-full transition duration-300 ease-linear align-middle" />
+                    <a href="#!">
+                        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed" style="background-color: rgba(0, 0, 0, 0.3);">
+                            <div class="flex justify-start items-end h-full">
+                                <h5 class="text-lg font-bold text-white m-6">Grigio Bardiglio Hellgrau</h5>
+                            </div>
+                        </div>
+                        <div class="hover-overlay">
+                            <div
+                                class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
+                                style="background-color: rgba(253, 253, 253, 0.15);"
+                            ></div>
+                        </div>
+                    </a>
+                </div>
             </div>
-          </div>
-          <div class="hover-overlay">
-            <div
-              class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-              style="background-color: rgba(253, 253, 253, 0.15)"></div>
-          </div>
-        </a>
-      </div>
+            <center>
+                <a
+                    class="inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 mt-10 bg-[#DF9E33] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    href="#!"
+                    role="button"
+                >
+                    Jetzt Anfrage stellen <i class="fa fa-arrow-right"></i>
+                </a>
+            </center>
+        </section>
+        <section class="mb-32 text-gray-800">
+            <style>
+                .zoom:hover img {
+                    transform: scale(1.1);
+                }
+            </style>
 
-      <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
-        style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-        <img src="img/stones/3.png" class="w-full transition duration-300 ease-linear align-middle" />
-        <a href="#!">
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.3)">
-            <div class="flex justify-start items-end h-full">
-              <h5 class="text-lg font-bold text-white m-6">Businessgrau</h5>
-            </div>
-          </div>
-          <div class="hover-overlay">
-            <div
-              class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-              style="background-color: rgba(253, 253, 253, 0.15)"></div>
-          </div>
-        </a>
-      </div>
-
-      <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
-        style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-        <img src="img/stones/4.png" class="w-full transition duration-300 ease-linear align-middle" />
-        <a href="#!">
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.3)">
-            <div class="flex justify-start items-end h-full">
-              <h5 class="text-lg font-bold text-white m-6">Giallo Mori</h5>
-            </div>
-          </div>
-          <div class="hover-overlay">
-            <div
-              class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-              style="background-color: rgba(253, 253, 253, 0.15)"></div>
-          </div>
-        </a>
-      </div>
-
-      <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
-        style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-        <img src="img/stones/5.png" class="w-full transition duration-300 ease-linear align-middle" />
-        <a href="#!">
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.3)">
-            <div class="flex justify-start items-end h-full">
-              <h5 class="text-lg font-bold text-white m-6">Grigio Bardiglio Dunkelgrau</h5>
-            </div>
-          </div>
-          <div class="hover-overlay">
-            <div
-              class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-              style="background-color: rgba(253, 253, 253, 0.15)"></div>
-          </div>
-        </a>
-      </div>
-
-      <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
-        style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-        <img src="img/stones/6.png" class="w-full transition duration-300 ease-linear align-middle" />
-        <a href="#!">
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.3)">
-            <div class="flex justify-start items-end h-full">
-              <h5 class="text-lg font-bold text-white m-6">Grigio Bardiglio Hellgrau</h5>
-            </div>
-          </div>
-          <div class="hover-overlay">
-            <div
-              class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-              style="background-color: rgba(253, 253, 253, 0.15)"></div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <center>
-      <a class="inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 mt-10 bg-[#DF9E33] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
-        data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Jetzt Anfrage stellen <i
-          class="fa fa-arrow-right"></i></a>
-    </center>
-  </section>
-  <section class="mb-32 text-gray-800">
-    <style>
-      .zoom:hover img {
-        transform: scale(1.1);
-      }
-    </style>
-
-    <h2 class="text-3xl font-bold mb-2 text-center">
-      Wissenswertes über <b class="text-[#DF9E33]"> Steinteppich</b>
-    </h2>
-    <p class="text-md mb-12 pl-10 pr-10">Steinteppiche bzw. Natursteinteppiche sind ein fugenloser, feinporiger
-      Fußboden-Belag, der sich durch hohe Belastbarkeit, leichtes Reinigen und eine edle Optik auszeichnet. Laufen wie
-      auf „Wolke“: Die speziell gerundeten Quarz- und Marmorgranulate verleihen dem Steinteppich ein unverwechselbares
-      und angenehmes Laufgefühl. Die feinen Poren reduzieren den Raum- und Trittschall und nehmen Hausstaub und Schmutz
-      leicht auf. Mit einem herkömmlichen Staubsauger oder Reinigungsgerät pflegen Sie Ihren neuen Steinteppich schnell
-      und hygienisch. Im Außenbereich, wie zum Beispiel bei Terrassen und Balkonen, werden unter dem Steinteppich-Belag
-      Drainagesysteme verlegt. Mit einer zusätzlichen „flüssigen Abdichtung“ wird der Steinteppich besonders langlebig.
-      Sie verhindert gleichzeitig Riss- und Algenbildung. Das von uns verwendete schadstoff- und lösungsmittelfreie
-      Bindemittel sorgt für einen ökologisch wertvollen Fußboden.</p>
-
-    <div class="grid sm:grid-rows lg:grid-cols-1 gap-4 lg:space-20">
-      <div class="w-[300px] lg:w-[1000px]  overflow-hidden rounded-lg bg-white shadow-lg  lg:mb-5 mx-auto">
-        <a data-te-ripple-init data-te-ripple-color="light" class="bt cursor-pointer">
-          <img class="rounded-t-lg" src="img/info-img/1.png" alt="" />
-          <button type="button"
-          class="inline-block w-full rounded bg-[transparent] text-[#DF9E33] hover:text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal shadow-[#E5E5E5] shadow-lg transition duration-150 ease-in-out hover:bg-[#DF9E33]">
-          mehr wissen
-        </button>
-        </a>
-        <div class="p-6 text-center">
-          <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
-            Tipps zur Pflege </h5>
-
-          <p class="mb-4 text-base text-left text-neutral-600 dark:text-neutral-200 hd ">
-            Steinteppichbeläge sollten regelmäßig gereinigt und gepflegt werden
-            sicher, dass sie bis in die Poren sauber und gesund sind. Wenn Sie sich um Ihre kümmern
-            Boden und reinigen Sie ihn richtig, er wird viele Jahre halten.
-            <br> <br>
-            <i class="fa fa-dot-circle-o"></i> Erste Schritte zur Pflege eines neuen Steinteppichs
-            Normalerweise müssen Sie einen Steinteppichboden in den ersten 7 Tagen danach nicht reinigen
-            es ablegen. Nach ca. 7 Tagen ist der neu verlegte Steinteppich fertig
-            hart. Während dieser Zeit reinigen Chemikalien und Getränke mit Säure oder Gerbstoffen
-            sollte nicht auf dem Boden verwendet werden. Aber Sie sollten keine Angst haben, ein Feuchtmittel zu
-            verwenden
-            Mikrofaser-Reinigungstuch, um leichten Schmutz zu entfernen. Bitte denken Sie daran
-            Natürlicher Marmorkies kann sich verfärben, wenn Säure und Gerbstoffe in ihn eindringen.
-            <br><br>
-
-            <i class="fa fa-dot-circle-o"></i> Innenpflege
-            Hier sollten Sie den Boden einmal pro Woche saugen und bei Bedarf nachwischen
-            mit warmem Wasser und einem milden Allzweckreiniger.
-            <br> <br>
-            <i class="fa fa-dot-circle-o"></i> Pflege der Außenflächen
-            Je nach Verschmutzungsgrad können alle Außenflächen mit gereinigt werden
-            warmes Wasser (ca. 30 bis 40 Grad), ein handelsübliches Reinigungsmittel und
-            ein Mop. Verwenden Sie dann einen Gartenschlauch, um den losen Schmutz wegzuspülen.
-            <br> <br>
-
-            <i class="fa fa-dot-circle-o"></i> einfache Reinigung
-            Ein- bis zweimal im Jahr sollte eine gründliche Reinigung durchgeführt werden, um dies sicherzustellen
-            die Abdeckung kann immer ablaufen. Dazu eignet sich ein starker Wasserstrahl
-            in die tiefen Poren geschossen, um sie zu reinigen, damit das Wasser ungehindert fließen kann
-            weg. Ein spezieller Reiniger kann verwendet werden, um Algenablagerungen loszuwerden
-            über den Winter gewachsen.
-          </p>
-        </div>
-      </div>
-
-      <div class="w-[300px] lg:w-[1000px] rounded-lg bg-white shadow-lg lg:mb-5 mx-auto">
-        <a data-te-ripple-init data-te-ripple-color="light" class="bt cursor-pointer">
-          <img class="rounded-t-lg" src="img/info-img/2.png" alt="" />
-          <button type="button"
-            class="inline-block w-full rounded bg-[transparent] text-[#DF9E33] hover:text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal shadow-[#E5E5E5] shadow-lg transition duration-150 ease-in-out hover:bg-[#DF9E33]">
-            mehr wissen
-          </button>
-        </a>
-        <div class="p-6 text-center">
-          <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
-            Farb- und Materialwahl </h5>
-          <p class="mb-4 text-base text-left text-neutral-600 dark:text-neutral-200 hd">
-            Stone carpet shows many sides of nature Marble granules are natural stones
-            that are good for your health. Marble is mined and polished in many places,
-            especially in Germany, to make the seamless stone carpet. The stones are
-            smoothed, washed, and dried several times. The marble pebble is free of dust
-            and very good. Special binding agents give the laid stone carpet its typical
-            silky, matte shine. There are different grain sizes of the marble pebble (2-4
-            mm and 4-8 mm).
-          </p>
-
-        </div>
-      </div>
-
-      <div class="w-[300px] lg:w-[1000px] rounded-lg bg-white shadow-lg lg:mb-5 mx-auto">
-        <a data-te-ripple-init data-te-ripple-color="light" class="bt cursor-pointer">
-          <img class="rounded-t-lg" src="img/info-img/4.png" alt="" />
-          <button type="button"
-            class="inline-block w-full rounded bg-[transparent] text-[#DF9E33] hover:text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal shadow-[#E5E5E5] shadow-lg transition duration-150 ease-in-out hover:bg-[#DF9E33]">
-            mehr wissen
-          </button>
-        </a>
-        <div class="p-6 text-center">
-          <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
-            Reibungslose Abwicklung
-          </h5>
-          <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200 hd">
-            Steinteppiche erleichtern die Fortbewegung
-            Keine Kanten oder Stufen auf dem Boden, über die man stolpern könnte. Mit einem nahtlosen Steinteppich,
-            es gibt keine schwellen mehr und alles kann barrierefrei gestaltet werden. Mit
-            Unser flüssig verlegter Natursteinteppich, Übergänge, die normalerweise einen brauchen würden
-            Stufe werden glatter gemacht, so dass ein Rollator oder Rollstuhl ohne verwendet werden kann
-            irgendwelche Probleme. <br> <br>
-            Unsere Quarz- und Marmorbeschichtungen rutschen nicht, da sie eine leichte Abnutzung haben
-            körnige Struktur. Dadurch sind sie sicher zu begehen und leicht zu halten. Der
-            Offenporige Struktur des fugenlos.de Steinteppichs lässt sich noch weiter veredeln
-            geschützt mit einer Oberflächenversiegelung an Orten wie Küche und Bad, wo
-            Sauberkeit ist wichtig.
-          </p>
-
-        </div>
-      </div>
-
-      <div class="w-[300px] lg:w-[1000px] rounded-lg bg-white shadow-lg lg:mb-5 mx-auto">
-        <a data-te-ripple-init data-te-ripple-color="light" class="bt cursor-pointer">
-          <img class="rounded-t-lg" src="img/info-img/3.png" alt="" />
-          <button type="button"
-            class="inline-block w-full rounded bg-[transparent] text-[#DF9E33] hover:text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal shadow-[#E5E5E5] shadow-lg transition duration-150 ease-in-out hover:bg-[#DF9E33]">
-            mehr wissen
-          </button>
-        </a>
-        <div class="p-6 text-center">
-          <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
-            Technische Information </h5>
-          <p class="mb-4 text-base text-left text-neutral-600 dark:text-neutral-200 hd">
-            <b>Technische Eigenschaften von Steinteppichen</b> <br>
-            ✓ Viele Säuren, Laugen und Lösungsmittel können ihm nichts anhaben. <br>
-            ✓ UV-beständig <br>
-            ✓ frostsicher und temperaturbeständig von -40°C bis +80°C <br>
-
-            ✓ geringe Aufbauhöhe von 6 bis 10 mm je nach Korngröße <br>
-            ✓ Rutschhemmung je nach Korngröße (R 8 bis R 10) <br>
-            ✓ geeignet für Fußbodenheizung <br>
-            ✓ kratzfest <br>
-            ✓ schalldämpfend durch seine Kapillaren <br>
-            ✓ 2-4 mm oder 4-8 mm Marmorkorn = 8-10 mm Schichtstärke <br>
-
-            ✓ Quarzkies Körnung: 2 - 3 mm oder 3 - 6 mm = Schichtdicke: 6 - 8 mm <br>
-          </p>
-
-        </div>
-      </div>
-    </div>
-    <center>
-      <a class="inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 mt-10 bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
-        data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Jetzt Anfrage stellen <i
-          class="fa fa-arrow-right"></i></a>
-    </center>
-  </section>
-  <!-- ====== Footer Section Start -->
-  <footer class="relative z-10 bg-[#fff] pt-20 pb-10 pl-4 lg:pt-[120px] lg:pb-20">
-    <div class="container mx-auto">
-      <div class="-mx-4 flex flex-wrap">
-        <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
-          <div class="mb-10 w-full">
-            <a href="javascript:void(0)" class="mb-6 inline-block max-w-[160px]">
-              <img src="https://ds-steinteppich.de/img/logo.png" alt="logo" class="max-w-full" />
-            </a>
-            <p class="text-body-color mb-7 text-base">
-              Sed ut perspiciatis undmnis is iste natus error sit amet voluptatem
-              totam rem aperiam.
+            <h2 class="text-3xl font-bold mb-2 text-center">Wissenswertes über <b class="text-[#DF9E33]"> Steinteppich</b></h2>
+            <p class="text-md mb-12 pl-10 pr-10">
+                Steinteppiche bzw. Natursteinteppiche sind ein fugenloser, feinporiger Fußboden-Belag, der sich durch hohe Belastbarkeit, leichtes Reinigen und eine edle Optik auszeichnet. Laufen wie auf „Wolke“: Die speziell gerundeten
+                Quarz- und Marmorgranulate verleihen dem Steinteppich ein unverwechselbares und angenehmes Laufgefühl. Die feinen Poren reduzieren den Raum- und Trittschall und nehmen Hausstaub und Schmutz leicht auf. Mit einem
+                herkömmlichen Staubsauger oder Reinigungsgerät pflegen Sie Ihren neuen Steinteppich schnell und hygienisch. Im Außenbereich, wie zum Beispiel bei Terrassen und Balkonen, werden unter dem Steinteppich-Belag Drainagesysteme
+                verlegt. Mit einer zusätzlichen „flüssigen Abdichtung“ wird der Steinteppich besonders langlebig. Sie verhindert gleichzeitig Riss- und Algenbildung. Das von uns verwendete schadstoff- und lösungsmittelfreie Bindemittel
+                sorgt für einen ökologisch wertvollen Fußboden.
             </p>
-            <p class="text-dark flex items-center text-sm font-medium">
-              <span class="text-[#DF9E33] mr-3">
-                <svg width="19" height="21" viewBox="0 0 19 21" class="fill-current">
-                  <path
-                    d="M17.8076 11.8129C17.741 11.0475 17.1088 10.5151 16.3434 10.5151H2.16795C1.40261 10.5151 0.803643 11.0808 0.703816 11.8129L0.00502514 18.8008C-0.0282506 19.2001 0.104853 19.6327 0.371059 19.9322C0.637265 20.2317 1.03657 20.398 1.46916 20.398H17.0755C17.4748 20.398 17.8741 20.2317 18.1736 19.9322C18.4398 19.6327 18.5729 19.2334 18.5396 18.8008L17.8076 11.8129ZM17.2751 19.1668C17.2419 19.2001 17.1753 19.2667 17.0422 19.2667H1.46916C1.36933 19.2667 1.2695 19.2001 1.23623 19.1668C1.20295 19.1336 1.1364 19.067 1.16968 18.9339L1.86847 11.9127C1.86847 11.7463 2.00157 11.6465 2.16795 11.6465H16.3767C16.5431 11.6465 16.6429 11.7463 16.6762 11.9127L17.375 18.9339C17.3417 19.0337 17.3084 19.1336 17.2751 19.1668Z" />
-                  <path
-                    d="M9.25704 13.1106C7.95928 13.1106 6.92773 14.1422 6.92773 15.4399C6.92773 16.7377 7.95928 17.7693 9.25704 17.7693C10.5548 17.7693 11.5863 16.7377 11.5863 15.4399C11.5863 14.1422 10.5548 13.1106 9.25704 13.1106ZM9.25704 16.6046C8.6248 16.6046 8.09239 16.0722 8.09239 15.4399C8.09239 14.8077 8.6248 14.2753 9.25704 14.2753C9.88928 14.2753 10.4217 14.8077 10.4217 15.4399C10.4217 16.0722 9.88928 16.6046 9.25704 16.6046Z" />
-                  <path
-                    d="M0.802807 6.05619C0.869358 7.52032 2.16711 8.11928 2.83263 8.11928H5.16193C5.19521 8.11928 5.19521 8.11928 5.19521 8.11928C6.19348 8.05273 7.19175 7.38722 7.19175 6.05619V5.25757C8.28985 5.25757 10.8188 5.25757 11.9169 5.25757V6.05619C11.9169 7.38722 12.9152 8.05273 13.9135 8.11928H13.9467H16.2428C16.9083 8.11928 18.206 7.52032 18.2726 6.05619C18.2726 5.95636 18.2726 5.59033 18.2726 5.25757C18.2726 4.99136 18.2726 4.75843 18.2726 4.72516C18.2726 4.69188 18.2726 4.6586 18.2726 4.6586C18.1727 3.72688 17.84 2.96154 17.2743 2.36258L17.241 2.3293C16.4091 1.56396 15.4109 1.13138 14.6455 0.865169C12.416 0 9.62088 0 9.48778 0C7.52451 0.0332757 6.26003 0.199654 4.36331 0.865169C3.63125 1.0981 2.63297 1.53068 1.80108 2.29603L1.7678 2.3293C1.20212 2.92827 0.869359 3.69361 0.769531 4.62533C0.769531 4.6586 0.769531 4.69188 0.769531 4.69188C0.769531 4.75843 0.769531 4.95809 0.769531 5.22429C0.802807 5.52377 0.802807 5.92308 0.802807 6.05619ZM2.5997 3.12792C3.26521 2.52896 4.09711 2.16292 4.7959 1.89672C6.52624 1.26448 7.65761 1.13138 9.55433 1.0981C9.68743 1.0981 12.2829 1.13138 14.2795 1.89672C14.9783 2.16292 15.8102 2.49568 16.4757 3.12792C16.8417 3.52723 17.0746 4.05964 17.1412 4.69188C17.1412 4.79171 17.1412 4.95809 17.1412 5.22429C17.1412 5.55705 17.1412 5.92308 17.1412 6.02291C17.1079 6.78825 16.3759 6.95463 16.276 6.95463H13.98C13.6472 6.92135 13.1148 6.78825 13.1148 6.05619V4.69188C13.1148 4.42567 12.9485 4.22602 12.7155 4.12619C12.5159 4.05964 6.69262 4.05964 6.49296 4.12619C6.26003 4.19274 6.09365 4.42567 6.09365 4.69188V6.05619C6.09365 6.78825 5.56124 6.92135 5.22848 6.95463H2.93246C2.83263 6.95463 2.10056 6.78825 2.06729 6.02291C2.06729 5.92308 2.06729 5.55705 2.06729 5.22429C2.06729 4.95809 2.06729 4.82498 2.06729 4.72516C2.00073 4.05964 2.23366 3.52723 2.5997 3.12792Z" />
-                </svg>
-              </span>
-              <span>+49 159/06529020</span>
-            </p>
-          </div>
-        </div>
-        <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
-          <div class="mb-10 w-full">
-            <h4 class="text-dark mb-9 text-lg font-semibold">Resources</h4>
-            <ul>
-              <li>
-                <a href="javascript:void(0)"
-                  class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
-                  Color Pattern
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)"
-                  class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
-                  Our Products
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)"
-                  class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
-                  User Flow
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)"
-                  class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
-                  User Strategy
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
-          <div class="mb-10 w-full">
-            <h4 class="text-dark mb-9 text-lg font-semibold">Company</h4>
-            <ul>
-              <li>
-                <a href="javascript:void(0)"
-                  class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
-                  About DS Steinteppich
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)"
-                  class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
-                  Contact & Support
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)"
-                  class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
-                  Success History
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)"
-                  class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
-                  Setting & Privacy
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
-          <div class="mb-10 w-full">
-            <h4 class="text-dark mb-9 text-lg font-semibold">Quick Links</h4>
-            <ul>
-              <li>
-                <a href="javascript:void(0)"
-                  class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
-                  Premium Support
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)"
-                  class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
-                  Our Services
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)"
-                  class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
-                  Know Our Team
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)"
-                  class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
-                  Services
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="w-full px-4 sm:w-1/2 lg:w-3/12">
-          <div class="mb-10 w-full">
-            <h4 class="text-dark mb-9 text-lg font-semibold">Follow Us On</h4>
-            <div class="mb-6 flex items-center">
-              <a href="javascript:void(0)"
-                class="text-dark hover:bg-[#DF9E33] hover:border-[#DF9E33] mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4">
-                <svg width="8" height="16" viewBox="0 0 8 16" class="fill-current">
-                  <path
-                    d="M7.43902 6.4H6.19918H5.75639V5.88387V4.28387V3.76774H6.19918H7.12906C7.3726 3.76774 7.57186 3.56129 7.57186 3.25161V0.516129C7.57186 0.232258 7.39474 0 7.12906 0H5.51285C3.76379 0 2.54609 1.44516 2.54609 3.5871V5.83226V6.34839H2.10329H0.597778C0.287819 6.34839 0 6.63226 0 7.04516V8.90323C0 9.26452 0.243539 9.6 0.597778 9.6H2.05902H2.50181V10.1161V15.3032C2.50181 15.6645 2.74535 16 3.09959 16H5.18075C5.31359 16 5.42429 15.9226 5.51285 15.8194C5.60141 15.7161 5.66783 15.5355 5.66783 15.3806V10.1419V9.62581H6.13276H7.12906C7.41688 9.62581 7.63828 9.41935 7.68256 9.10968V9.08387V9.05806L7.99252 7.27742C8.01466 7.09677 7.99252 6.89032 7.85968 6.68387C7.8154 6.55484 7.61614 6.42581 7.43902 6.4Z" />
-                </svg>
-              </a>
-              <a href="javascript:void(0)"
-                class="text-dark hover:bg-[#DF9E33] hover:border-[#DF9E33] mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4">
-                <svg width="16" height="12" viewBox="0 0 16 12" class="fill-current">
-                  <path
-                    d="M14.2194 2.06654L15.2 0.939335C15.4839 0.634051 15.5613 0.399217 15.5871 0.2818C14.8129 0.704501 14.0903 0.845401 13.6258 0.845401H13.4452L13.3419 0.751468C12.7226 0.258317 11.9484 0 11.1226 0C9.31613 0 7.89677 1.36204 7.89677 2.93542C7.89677 3.02935 7.89677 3.17025 7.92258 3.26419L8 3.73386L7.45806 3.71037C4.15484 3.61644 1.44516 1.03327 1.00645 0.587084C0.283871 1.76125 0.696774 2.88845 1.13548 3.59296L2.0129 4.90802L0.619355 4.20352C0.645161 5.18982 1.05806 5.96477 1.85806 6.52838L2.55484 6.99804L1.85806 7.25636C2.29677 8.45401 3.27742 8.94716 4 9.13503L4.95484 9.36986L4.05161 9.93346C2.60645 10.8728 0.8 10.8024 0 10.7319C1.62581 11.7652 3.56129 12 4.90323 12C5.90968 12 6.65806 11.9061 6.83871 11.8356C14.0645 10.2857 14.4 4.41487 14.4 3.2407V3.07632L14.5548 2.98239C15.4323 2.23092 15.7935 1.8317 16 1.59687C15.9226 1.62035 15.8194 1.66732 15.7161 1.6908L14.2194 2.06654Z" />
-                </svg>
-              </a>
-              <a href="javascript:void(0)"
-                class="text-dark hover:bg-[#DF9E33] hover:border-[#DF9E33] mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4">
-                <svg width="16" height="12" viewBox="0 0 16 12" class="fill-current">
-                  <path
-                    d="M15.6645 1.88018C15.4839 1.13364 14.9419 0.552995 14.2452 0.359447C13.0065 6.59222e-08 8 0 8 0C8 0 2.99355 6.59222e-08 1.75484 0.359447C1.05806 0.552995 0.516129 1.13364 0.335484 1.88018C0 3.23502 0 6 0 6C0 6 0 8.79263 0.335484 10.1198C0.516129 10.8664 1.05806 11.447 1.75484 11.6406C2.99355 12 8 12 8 12C8 12 13.0065 12 14.2452 11.6406C14.9419 11.447 15.4839 10.8664 15.6645 10.1198C16 8.79263 16 6 16 6C16 6 16 3.23502 15.6645 1.88018ZM6.4 8.57143V3.42857L10.5548 6L6.4 8.57143Z" />
-                </svg>
-              </a>
-              <a href="javascript:void(0)"
-                class="text-dark hover:bg-[#DF9E33] hover:border-[#DF9E33] mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4">
-                <svg width="14" height="14" viewBox="0 0 14 14" class="fill-current">
-                  <path
-                    d="M13.0214 0H1.02084C0.453707 0 0 0.451613 0 1.01613V12.9839C0 13.5258 0.453707 14 1.02084 14H12.976C13.5432 14 13.9969 13.5484 13.9969 12.9839V0.993548C14.0422 0.451613 13.5885 0 13.0214 0ZM4.15142 11.9H2.08705V5.23871H4.15142V11.9ZM3.10789 4.3129C2.42733 4.3129 1.90557 3.77097 1.90557 3.11613C1.90557 2.46129 2.45002 1.91935 3.10789 1.91935C3.76577 1.91935 4.31022 2.46129 4.31022 3.11613C4.31022 3.77097 3.81114 4.3129 3.10789 4.3129ZM11.9779 11.9H9.9135V8.67097C9.9135 7.90323 9.89082 6.8871 8.82461 6.8871C7.73571 6.8871 7.57691 7.74516 7.57691 8.60323V11.9H5.51254V5.23871H7.53154V6.16452H7.55423C7.84914 5.62258 8.50701 5.08065 9.52785 5.08065C11.6376 5.08065 12.0232 6.43548 12.0232 8.2871V11.9H11.9779Z" />
-                </svg>
-              </a>
+
+            <div class="grid sm:grid-rows lg:grid-cols-1 gap-4 lg:space-20">
+                <div class="w-[300px] lg:w-[1000px] overflow-hidden rounded-lg bg-white shadow-lg lg:mb-5 mx-auto">
+                    <a data-te-ripple-init data-te-ripple-color="light" class="bt cursor-pointer">
+                        <img class="rounded-t-lg" src="img/info-img/1.png" alt="" />
+                        <button
+                            type="button"
+                            class="inline-block w-full rounded bg-[transparent] text-[#DF9E33] hover:text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal shadow-[#E5E5E5] shadow-lg transition duration-150 ease-in-out hover:bg-[#DF9E33]"
+                        >
+                            mehr wissen
+                        </button>
+                    </a>
+                    <div class="p-6 text-center">
+                        <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800">
+                            Tipps zur Pflege
+                        </h5>
+
+                        <p class="mb-4 text-base text-left text-neutral-600 dark:text-neutral-200 hd">
+                            Steinteppichbeläge sollten regelmäßig gereinigt und gepflegt werden sicher, dass sie bis in die Poren sauber und gesund sind. Wenn Sie sich um Ihre kümmern Boden und reinigen Sie ihn richtig, er wird viele Jahre
+                            halten.
+                            <br />
+                            <br />
+                            <i class="fa fa-dot-circle-o"></i> Erste Schritte zur Pflege eines neuen Steinteppichs Normalerweise müssen Sie einen Steinteppichboden in den ersten 7 Tagen danach nicht reinigen es ablegen. Nach ca. 7 Tagen ist
+                            der neu verlegte Steinteppich fertig hart. Während dieser Zeit reinigen Chemikalien und Getränke mit Säure oder Gerbstoffen sollte nicht auf dem Boden verwendet werden. Aber Sie sollten keine Angst haben, ein
+                            Feuchtmittel zu verwenden Mikrofaser-Reinigungstuch, um leichten Schmutz zu entfernen. Bitte denken Sie daran Natürlicher Marmorkies kann sich verfärben, wenn Säure und Gerbstoffe in ihn eindringen. <br />
+                            <br />
+
+                            <i class="fa fa-dot-circle-o"></i> Innenpflege Hier sollten Sie den Boden einmal pro Woche saugen und bei Bedarf nachwischen mit warmem Wasser und einem milden Allzweckreiniger. <br />
+                            <br />
+                            <i class="fa fa-dot-circle-o"></i> Pflege der Außenflächen Je nach Verschmutzungsgrad können alle Außenflächen mit gereinigt werden warmes Wasser (ca. 30 bis 40 Grad), ein handelsübliches Reinigungsmittel und ein
+                            Mop. Verwenden Sie dann einen Gartenschlauch, um den losen Schmutz wegzuspülen. <br />
+                            <br />
+
+                            <i class="fa fa-dot-circle-o"></i> einfache Reinigung Ein- bis zweimal im Jahr sollte eine gründliche Reinigung durchgeführt werden, um dies sicherzustellen die Abdeckung kann immer ablaufen. Dazu eignet sich ein
+                            starker Wasserstrahl in die tiefen Poren geschossen, um sie zu reinigen, damit das Wasser ungehindert fließen kann weg. Ein spezieller Reiniger kann verwendet werden, um Algenablagerungen loszuwerden über den
+                            Winter gewachsen.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-[300px] lg:w-[1000px] rounded-lg bg-white shadow-lg lg:mb-5 mx-auto">
+                    <a data-te-ripple-init data-te-ripple-color="light" class="bt cursor-pointer">
+                        <img class="rounded-t-lg" src="img/info-img/2.png" alt="" />
+                        <button
+                            type="button"
+                            class="inline-block w-full rounded bg-[transparent] text-[#DF9E33] hover:text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal shadow-[#E5E5E5] shadow-lg transition duration-150 ease-in-out hover:bg-[#DF9E33]"
+                        >
+                            mehr wissen
+                        </button>
+                    </a>
+                    <div class="p-6 text-center">
+                        <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800">
+                            Farb- und Materialwahl
+                        </h5>
+                        <p class="mb-4 text-base text-left text-neutral-600 dark:text-neutral-200 hd">
+                            Stone carpet shows many sides of nature Marble granules are natural stones that are good for your health. Marble is mined and polished in many places, especially in Germany, to make the seamless stone carpet. The
+                            stones are smoothed, washed, and dried several times. The marble pebble is free of dust and very good. Special binding agents give the laid stone carpet its typical silky, matte shine. There are different grain
+                            sizes of the marble pebble (2-4 mm and 4-8 mm).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-[300px] lg:w-[1000px] rounded-lg bg-white shadow-lg lg:mb-5 mx-auto">
+                    <a data-te-ripple-init data-te-ripple-color="light" class="bt cursor-pointer">
+                        <img class="rounded-t-lg" src="img/info-img/4.png" alt="" />
+                        <button
+                            type="button"
+                            class="inline-block w-full rounded bg-[transparent] text-[#DF9E33] hover:text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal shadow-[#E5E5E5] shadow-lg transition duration-150 ease-in-out hover:bg-[#DF9E33]"
+                        >
+                            mehr wissen
+                        </button>
+                    </a>
+                    <div class="p-6 text-center">
+                        <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800">
+                            Reibungslose Abwicklung
+                        </h5>
+                        <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200 hd">
+                            Steinteppiche erleichtern die Fortbewegung Keine Kanten oder Stufen auf dem Boden, über die man stolpern könnte. Mit einem nahtlosen Steinteppich, es gibt keine schwellen mehr und alles kann barrierefrei
+                            gestaltet werden. Mit Unser flüssig verlegter Natursteinteppich, Übergänge, die normalerweise einen brauchen würden Stufe werden glatter gemacht, so dass ein Rollator oder Rollstuhl ohne verwendet werden kann
+                            irgendwelche Probleme. <br />
+                            <br />
+                            Unsere Quarz- und Marmorbeschichtungen rutschen nicht, da sie eine leichte Abnutzung haben körnige Struktur. Dadurch sind sie sicher zu begehen und leicht zu halten. Der Offenporige Struktur des fugenlos.de
+                            Steinteppichs lässt sich noch weiter veredeln geschützt mit einer Oberflächenversiegelung an Orten wie Küche und Bad, wo Sauberkeit ist wichtig.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-[300px] lg:w-[1000px] rounded-lg bg-white shadow-lg lg:mb-5 mx-auto">
+                    <a data-te-ripple-init data-te-ripple-color="light" class="bt cursor-pointer">
+                        <img class="rounded-t-lg" src="img/info-img/3.png" alt="" />
+                        <button
+                            type="button"
+                            class="inline-block w-full rounded bg-[transparent] text-[#DF9E33] hover:text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal shadow-[#E5E5E5] shadow-lg transition duration-150 ease-in-out hover:bg-[#DF9E33]"
+                        >
+                            mehr wissen
+                        </button>
+                    </a>
+                    <div class="p-6 text-center">
+                        <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800">
+                            Technische Information
+                        </h5>
+                        <p class="mb-4 text-base text-left text-neutral-600 dark:text-neutral-200 hd">
+                            <b>Technische Eigenschaften von Steinteppichen</b> <br />
+                            ✓ Viele Säuren, Laugen und Lösungsmittel können ihm nichts anhaben. <br />
+                            ✓ UV-beständig <br />
+                            ✓ frostsicher und temperaturbeständig von -40°C bis +80°C <br />
+
+                            ✓ geringe Aufbauhöhe von 6 bis 10 mm je nach Korngröße <br />
+                            ✓ Rutschhemmung je nach Korngröße (R 8 bis R 10) <br />
+                            ✓ geeignet für Fußbodenheizung <br />
+                            ✓ kratzfest <br />
+                            ✓ schalldämpfend durch seine Kapillaren <br />
+                            ✓ 2-4 mm oder 4-8 mm Marmorkorn = 8-10 mm Schichtstärke <br />
+
+                            ✓ Quarzkies Körnung: 2 - 3 mm oder 3 - 6 mm = Schichtdicke: 6 - 8 mm <br />
+                        </p>
+                    </div>
+                </div>
             </div>
-            <p class="text-body-color text-base">&copy; 2025 ds-steinteppich</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <span class="absolute left-0 bottom-0 z-[-1]">
-        <svg width="217" height="229" viewBox="0 0 217 229" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M-64 140.5C-64 62.904 -1.096 1.90666e-05 76.5 1.22829e-05C154.096 5.49924e-06 217 62.904 217 140.5C217 218.096 154.096 281 76.5 281C-1.09598 281 -64 218.096 -64 140.5Z"
-            fill="url(#paint0_linear_1179_5)" />
-          <defs>
-            <linearGradient id="paint0_linear_1179_5" x1="76.5" y1="281" x2="76.5" y2="1.22829e-05"
-              gradientUnits="userSpaceOnUse">
-              <stop stop-color="#DF9E33" stop-opacity="0.08" />
-              <stop offset="1" stop-color="#C97F2B" stop-opacity="0" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </span>
-      <span class="absolute top-10 right-10 z-[-1]">
-        <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M37.5 -1.63918e-06C58.2107 -2.54447e-06 75 16.7893 75 37.5C75 58.2107 58.2107 75 37.5 75C16.7893 75 -7.33885e-07 58.2107 -1.63918e-06 37.5C-2.54447e-06 16.7893 16.7893 -7.33885e-07 37.5 -1.63918e-06Z"
-            fill="url(#paint0_linear_1179_4)" />
-          <defs>
-            <linearGradient id="paint0_linear_1179_4" x1="-1.63917e-06" y1="37.5" x2="75" y2="37.5"
-              gradientUnits="userSpaceOnUse">
-              <stop stop-color="#DF9E33" stop-opacity="0.31" />
-              <stop offset="1" stop-color="#C97F2B" stop-opacity="0" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </span>
-    </div>
-  </footer>
-  <!-- ====== Footer Section End -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      new Swiper('.swiper-container', {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 32,
-        autoplay: {
-          delay: 8000,
-        },
-        breakpoints: {
-          640: {
-            centeredSlides: true,
-            slidesPerView: 1.25,
-          },
-          1024: {
-            centeredSlides: false,
-            slidesPerView: 1.5,
-          },
-        },
-        navigation: {
-          nextEl: '.next-button',
-          prevEl: '.prev-button',
-        },
-      })
-    })
-  </script>
-  <script>
-    document.addEventListener('alpine:init', () => {
-      Alpine.store('accordion', {
-        tab: 0
-      });
+            <center>
+                <a
+                    class="inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 mt-10 bg-[#8B4816] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-[#C97F2B] hover:shadow-lg focus:bg-[#F0B637] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#C97F2B] active:shadow-lg transition duration-150 ease-in-out"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    href="#!"
+                    role="button"
+                >
+                    Jetzt Anfrage stellen <i class="fa fa-arrow-right"></i>
+                </a>
+            </center>
+        </section>
+        <!-- ====== Footer Section Start -->
+        <footer class="relative z-10 bg-[#fff] pt-20 pb-10 pl-4 lg:pt-[120px] lg:pb-20">
+            <div class="container mx-auto">
+                <div class="-mx-4 flex flex-wrap">
+                    <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
+                        <div class="mb-10 w-full">
+                            <a href="javascript:void(0)" class="mb-6 inline-block max-w-[160px]">
+                                <img src="https://ds-steinteppich.de/img/logo.png" alt="logo" class="max-w-full" />
+                            </a>
+                            <p class="text-body-color mb-7 text-base">
+                                Sed ut perspiciatis undmnis is iste natus error sit amet voluptatem totam rem aperiam.
+                            </p>
+                            <p class="text-dark flex items-center text-sm font-medium">
+                                <span class="text-[#DF9E33] mr-3">
+                                    <svg width="19" height="21" viewBox="0 0 19 21" class="fill-current">
+                                        <path
+                                            d="M17.8076 11.8129C17.741 11.0475 17.1088 10.5151 16.3434 10.5151H2.16795C1.40261 10.5151 0.803643 11.0808 0.703816 11.8129L0.00502514 18.8008C-0.0282506 19.2001 0.104853 19.6327 0.371059 19.9322C0.637265 20.2317 1.03657 20.398 1.46916 20.398H17.0755C17.4748 20.398 17.8741 20.2317 18.1736 19.9322C18.4398 19.6327 18.5729 19.2334 18.5396 18.8008L17.8076 11.8129ZM17.2751 19.1668C17.2419 19.2001 17.1753 19.2667 17.0422 19.2667H1.46916C1.36933 19.2667 1.2695 19.2001 1.23623 19.1668C1.20295 19.1336 1.1364 19.067 1.16968 18.9339L1.86847 11.9127C1.86847 11.7463 2.00157 11.6465 2.16795 11.6465H16.3767C16.5431 11.6465 16.6429 11.7463 16.6762 11.9127L17.375 18.9339C17.3417 19.0337 17.3084 19.1336 17.2751 19.1668Z"
+                                        />
+                                        <path
+                                            d="M9.25704 13.1106C7.95928 13.1106 6.92773 14.1422 6.92773 15.4399C6.92773 16.7377 7.95928 17.7693 9.25704 17.7693C10.5548 17.7693 11.5863 16.7377 11.5863 15.4399C11.5863 14.1422 10.5548 13.1106 9.25704 13.1106ZM9.25704 16.6046C8.6248 16.6046 8.09239 16.0722 8.09239 15.4399C8.09239 14.8077 8.6248 14.2753 9.25704 14.2753C9.88928 14.2753 10.4217 14.8077 10.4217 15.4399C10.4217 16.0722 9.88928 16.6046 9.25704 16.6046Z"
+                                        />
+                                        <path
+                                            d="M0.802807 6.05619C0.869358 7.52032 2.16711 8.11928 2.83263 8.11928H5.16193C5.19521 8.11928 5.19521 8.11928 5.19521 8.11928C6.19348 8.05273 7.19175 7.38722 7.19175 6.05619V5.25757C8.28985 5.25757 10.8188 5.25757 11.9169 5.25757V6.05619C11.9169 7.38722 12.9152 8.05273 13.9135 8.11928H13.9467H16.2428C16.9083 8.11928 18.206 7.52032 18.2726 6.05619C18.2726 5.95636 18.2726 5.59033 18.2726 5.25757C18.2726 4.99136 18.2726 4.75843 18.2726 4.72516C18.2726 4.69188 18.2726 4.6586 18.2726 4.6586C18.1727 3.72688 17.84 2.96154 17.2743 2.36258L17.241 2.3293C16.4091 1.56396 15.4109 1.13138 14.6455 0.865169C12.416 0 9.62088 0 9.48778 0C7.52451 0.0332757 6.26003 0.199654 4.36331 0.865169C3.63125 1.0981 2.63297 1.53068 1.80108 2.29603L1.7678 2.3293C1.20212 2.92827 0.869359 3.69361 0.769531 4.62533C0.769531 4.6586 0.769531 4.69188 0.769531 4.69188C0.769531 4.75843 0.769531 4.95809 0.769531 5.22429C0.802807 5.52377 0.802807 5.92308 0.802807 6.05619ZM2.5997 3.12792C3.26521 2.52896 4.09711 2.16292 4.7959 1.89672C6.52624 1.26448 7.65761 1.13138 9.55433 1.0981C9.68743 1.0981 12.2829 1.13138 14.2795 1.89672C14.9783 2.16292 15.8102 2.49568 16.4757 3.12792C16.8417 3.52723 17.0746 4.05964 17.1412 4.69188C17.1412 4.79171 17.1412 4.95809 17.1412 5.22429C17.1412 5.55705 17.1412 5.92308 17.1412 6.02291C17.1079 6.78825 16.3759 6.95463 16.276 6.95463H13.98C13.6472 6.92135 13.1148 6.78825 13.1148 6.05619V4.69188C13.1148 4.42567 12.9485 4.22602 12.7155 4.12619C12.5159 4.05964 6.69262 4.05964 6.49296 4.12619C6.26003 4.19274 6.09365 4.42567 6.09365 4.69188V6.05619C6.09365 6.78825 5.56124 6.92135 5.22848 6.95463H2.93246C2.83263 6.95463 2.10056 6.78825 2.06729 6.02291C2.06729 5.92308 2.06729 5.55705 2.06729 5.22429C2.06729 4.95809 2.06729 4.82498 2.06729 4.72516C2.00073 4.05964 2.23366 3.52723 2.5997 3.12792Z"
+                                        />
+                                    </svg>
+                                </span>
+                                <span>+49 159/06529020</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+                        <div class="mb-10 w-full">
+                            <h4 class="text-dark mb-9 text-lg font-semibold">Resources</h4>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
+                                        Color Pattern
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
+                                        Our Products
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
+                                        User Flow
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
+                                        User Strategy
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+                        <div class="mb-10 w-full">
+                            <h4 class="text-dark mb-9 text-lg font-semibold">Company</h4>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
+                                        About DS Steinteppich
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
+                                        Contact & Support
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
+                                        Success History
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
+                                        Setting & Privacy
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+                        <div class="mb-10 w-full">
+                            <h4 class="text-dark mb-9 text-lg font-semibold">Quick Links</h4>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
+                                        Premium Support
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
+                                        Our Services
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
+                                        Know Our Team
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">
+                                        Services
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="w-full px-4 sm:w-1/2 lg:w-3/12">
+                        <div class="mb-10 w-full">
+                            <h4 class="text-dark mb-9 text-lg font-semibold">Follow Us On</h4>
+                            <div class="mb-6 flex items-center">
+                                <a
+                                    href="javascript:void(0)"
+                                    class="text-dark hover:bg-[#DF9E33] hover:border-[#DF9E33] mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                                >
+                                    <svg width="8" height="16" viewBox="0 0 8 16" class="fill-current">
+                                        <path
+                                            d="M7.43902 6.4H6.19918H5.75639V5.88387V4.28387V3.76774H6.19918H7.12906C7.3726 3.76774 7.57186 3.56129 7.57186 3.25161V0.516129C7.57186 0.232258 7.39474 0 7.12906 0H5.51285C3.76379 0 2.54609 1.44516 2.54609 3.5871V5.83226V6.34839H2.10329H0.597778C0.287819 6.34839 0 6.63226 0 7.04516V8.90323C0 9.26452 0.243539 9.6 0.597778 9.6H2.05902H2.50181V10.1161V15.3032C2.50181 15.6645 2.74535 16 3.09959 16H5.18075C5.31359 16 5.42429 15.9226 5.51285 15.8194C5.60141 15.7161 5.66783 15.5355 5.66783 15.3806V10.1419V9.62581H6.13276H7.12906C7.41688 9.62581 7.63828 9.41935 7.68256 9.10968V9.08387V9.05806L7.99252 7.27742C8.01466 7.09677 7.99252 6.89032 7.85968 6.68387C7.8154 6.55484 7.61614 6.42581 7.43902 6.4Z"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href="javascript:void(0)"
+                                    class="text-dark hover:bg-[#DF9E33] hover:border-[#DF9E33] mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                                >
+                                    <svg width="16" height="12" viewBox="0 0 16 12" class="fill-current">
+                                        <path
+                                            d="M14.2194 2.06654L15.2 0.939335C15.4839 0.634051 15.5613 0.399217 15.5871 0.2818C14.8129 0.704501 14.0903 0.845401 13.6258 0.845401H13.4452L13.3419 0.751468C12.7226 0.258317 11.9484 0 11.1226 0C9.31613 0 7.89677 1.36204 7.89677 2.93542C7.89677 3.02935 7.89677 3.17025 7.92258 3.26419L8 3.73386L7.45806 3.71037C4.15484 3.61644 1.44516 1.03327 1.00645 0.587084C0.283871 1.76125 0.696774 2.88845 1.13548 3.59296L2.0129 4.90802L0.619355 4.20352C0.645161 5.18982 1.05806 5.96477 1.85806 6.52838L2.55484 6.99804L1.85806 7.25636C2.29677 8.45401 3.27742 8.94716 4 9.13503L4.95484 9.36986L4.05161 9.93346C2.60645 10.8728 0.8 10.8024 0 10.7319C1.62581 11.7652 3.56129 12 4.90323 12C5.90968 12 6.65806 11.9061 6.83871 11.8356C14.0645 10.2857 14.4 4.41487 14.4 3.2407V3.07632L14.5548 2.98239C15.4323 2.23092 15.7935 1.8317 16 1.59687C15.9226 1.62035 15.8194 1.66732 15.7161 1.6908L14.2194 2.06654Z"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href="javascript:void(0)"
+                                    class="text-dark hover:bg-[#DF9E33] hover:border-[#DF9E33] mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                                >
+                                    <svg width="16" height="12" viewBox="0 0 16 12" class="fill-current">
+                                        <path
+                                            d="M15.6645 1.88018C15.4839 1.13364 14.9419 0.552995 14.2452 0.359447C13.0065 6.59222e-08 8 0 8 0C8 0 2.99355 6.59222e-08 1.75484 0.359447C1.05806 0.552995 0.516129 1.13364 0.335484 1.88018C0 3.23502 0 6 0 6C0 6 0 8.79263 0.335484 10.1198C0.516129 10.8664 1.05806 11.447 1.75484 11.6406C2.99355 12 8 12 8 12C8 12 13.0065 12 14.2452 11.6406C14.9419 11.447 15.4839 10.8664 15.6645 10.1198C16 8.79263 16 6 16 6C16 6 16 3.23502 15.6645 1.88018ZM6.4 8.57143V3.42857L10.5548 6L6.4 8.57143Z"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href="javascript:void(0)"
+                                    class="text-dark hover:bg-[#DF9E33] hover:border-[#DF9E33] mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                                >
+                                    <svg width="14" height="14" viewBox="0 0 14 14" class="fill-current">
+                                        <path
+                                            d="M13.0214 0H1.02084C0.453707 0 0 0.451613 0 1.01613V12.9839C0 13.5258 0.453707 14 1.02084 14H12.976C13.5432 14 13.9969 13.5484 13.9969 12.9839V0.993548C14.0422 0.451613 13.5885 0 13.0214 0ZM4.15142 11.9H2.08705V5.23871H4.15142V11.9ZM3.10789 4.3129C2.42733 4.3129 1.90557 3.77097 1.90557 3.11613C1.90557 2.46129 2.45002 1.91935 3.10789 1.91935C3.76577 1.91935 4.31022 2.46129 4.31022 3.11613C4.31022 3.77097 3.81114 4.3129 3.10789 4.3129ZM11.9779 11.9H9.9135V8.67097C9.9135 7.90323 9.89082 6.8871 8.82461 6.8871C7.73571 6.8871 7.57691 7.74516 7.57691 8.60323V11.9H5.51254V5.23871H7.53154V6.16452H7.55423C7.84914 5.62258 8.50701 5.08065 9.52785 5.08065C11.6376 5.08065 12.0232 6.43548 12.0232 8.2871V11.9H11.9779Z"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                            <p class="text-body-color text-base">&copy; 2025 ds-steinteppich</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span class="absolute left-0 bottom-0 z-[-1]">
+                    <svg width="217" height="229" viewBox="0 0 217 229" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M-64 140.5C-64 62.904 -1.096 1.90666e-05 76.5 1.22829e-05C154.096 5.49924e-06 217 62.904 217 140.5C217 218.096 154.096 281 76.5 281C-1.09598 281 -64 218.096 -64 140.5Z" fill="url(#paint0_linear_1179_5)" />
+                        <defs>
+                            <linearGradient id="paint0_linear_1179_5" x1="76.5" y1="281" x2="76.5" y2="1.22829e-05" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#DF9E33" stop-opacity="0.08" />
+                                <stop offset="1" stop-color="#C97F2B" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </span>
+                <span class="absolute top-10 right-10 z-[-1]">
+                    <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M37.5 -1.63918e-06C58.2107 -2.54447e-06 75 16.7893 75 37.5C75 58.2107 58.2107 75 37.5 75C16.7893 75 -7.33885e-07 58.2107 -1.63918e-06 37.5C-2.54447e-06 16.7893 16.7893 -7.33885e-07 37.5 -1.63918e-06Z"
+                            fill="url(#paint0_linear_1179_4)"
+                        />
+                        <defs>
+                            <linearGradient id="paint0_linear_1179_4" x1="-1.63917e-06" y1="37.5" x2="75" y2="37.5" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#DF9E33" stop-opacity="0.31" />
+                                <stop offset="1" stop-color="#C97F2B" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </span>
+            </div>
+        </footer>
+        <!-- ====== Footer Section End -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                new Swiper(".swiper-container", {
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 32,
+                    autoplay: {
+                        delay: 8000,
+                    },
+                    breakpoints: {
+                        640: {
+                            centeredSlides: true,
+                            slidesPerView: 1.25,
+                        },
+                        1024: {
+                            centeredSlides: false,
+                            slidesPerView: 1.5,
+                        },
+                    },
+                    navigation: {
+                        nextEl: ".next-button",
+                        prevEl: ".prev-button",
+                    },
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener("alpine:init", () => {
+                Alpine.store("accordion", {
+                    tab: 0,
+                });
 
-      Alpine.data('accordion', (idx) => ({
-        init() {
-          this.idx = idx;
-        },
-        idx: -1,
-        handleClick() {
-          this.$store.accordion.tab = this.$store.accordion.tab === this.idx ? 0 : this.idx;
-        },
-        handleRotate() {
-          return this.$store.accordion.tab === this.idx ? 'rotate-180' : '';
-        },
-        handleToggle() {
-          return this.$store.accordion.tab === this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : '';
-        }
-      }));
-    })
-  </script>
-  <script src="js/script.js"></script>
-</body>
-
+                Alpine.data("accordion", (idx) => ({
+                    init() {
+                        this.idx = idx;
+                    },
+                    idx: -1,
+                    handleClick() {
+                        this.$store.accordion.tab = this.$store.accordion.tab === this.idx ? 0 : this.idx;
+                    },
+                    handleRotate() {
+                        return this.$store.accordion.tab === this.idx ? "rotate-180" : "";
+                    },
+                    handleToggle() {
+                        return this.$store.accordion.tab === this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : "";
+                    },
+                }));
+            });
+        </script>
+        <script src="js/script.js"></script>
+    </body>
 </html>
