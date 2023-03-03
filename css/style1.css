@@ -1,7 +1,27 @@
 .slides-container {
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.slides-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.icons-container1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  top: 5px;
+  width: 150px;
+  z-index: 0;
+}
+@media (max-width: 600px) {
+  .container1 {
+    display: none;
   }
-  .slides-container::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-  }
+}
