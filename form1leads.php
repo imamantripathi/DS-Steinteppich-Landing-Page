@@ -10,10 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = trim($_POST["message"]);
 
     // Set the recipient email address
-    $to = " armin.erath@ds-steinteppich.de";
+    $to = "armin.erath@ds-steinteppich.de";
 
     // Set the email subject
-    $subject = "New Contact Form Submission";
+    $subject = "Neue Kontaktformulareinreichung";
 
     // Build the email content
     $email_content = "Name: $name\n";
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     } else {
         // If the email fails to send, show an error message
-        echo "Oops! Something went wrong and we couldn't send your message.";
+        echo "Hoppla! Etwas lief schief und wir konnten Ihre Nachricht nicht senden.";
     }
 }
 

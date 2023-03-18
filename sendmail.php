@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
 
     // Send email
     if (mail($to, $subject, $body, $headers)) {
-        echo "Ihre Nachricht wurde gesendet. Wir werden uns so schnell wie möglich bei Ihnen melden.";
+         header("Location: thankyou.html");
     } else {
         echo "Beim Senden Ihrer Nachricht ist ein Problem aufgetreten. Bitte versuchen Sie es später erneut.";
     }
