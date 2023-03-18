@@ -37,3 +37,27 @@
      margin-bottom: 1px;
     right: 0;
 }
+/* // modal timer style  */
+/* Glass effect */
+.backdrop-blur-lg {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Shadow effect */
+.shadow-lg {
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* Timer styles */
+#minutes,
+#seconds {
+  transition: all 0.3s ease;
+}
+
+#minutes:hover,
+#seconds:hover {
+  transform: scale(1.1);
+  text-shadow: 0px 0px 10px #f1d7b8;
+}

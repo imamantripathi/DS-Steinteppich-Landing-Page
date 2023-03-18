@@ -10,3 +10,4 @@ nextButton.addEventListener("click", () => {
 prevButton.addEventListener("click", () => {
   slidesContainer.scrollLeft -= slideWidth * 2;
 });
+// Timer modal js 
