@@ -85,7 +85,37 @@
     <!--End of Tawk.to Script-->
   </head>
 
-  <body class="bg-[#fff] text-black overflow-y-scroll scrollbar-w-5 scrollbar-track-purple-200 scrollbar-thumb-gray-400 hover:scrollbar-thumb-black">
+  <body class="bg-[#fff] text-black">
+    <!-- ProvenExpert Rating seals -->
+    <style type="text/css">
+      body {
+        -ms-overflow-style: scrollbar;
+      }
+      @media (max-width: 991px) {
+        .ProvenExpert_widget_container {
+          display: none !important;
+        }
+      }
+    </style>
+    <span
+      class="ProvenExpert_widget_container"
+      id="provenexpert_circle_widget_jcexq"
+      style="
+        text-decoration: none;
+        z-index: 9999;
+        position: fixed;
+        float: left;
+        line-height: 0;
+        right: 5px;
+        top: 115px;
+      "
+    ></span>
+    <script
+      type="text/javascript"
+      async
+      src="https://www.provenexpert.com/widget/circlewidget.js?s=195&id=jcexq&u=2ZmpjuGZjRQZhuQZ0LQZkSmAjxQB3HmZ"
+    ></script>
+    <!-- ProvenExpert Rating seals -->
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -647,13 +677,20 @@
       class="bg-[url('img/bg2.png')] bg-cover bg-fixed pb-5 pt-20"
       id="trust"
     >
-      <div class="hero container max-w-screen-lg mx-auto text-center">
-        <img
-          src="img/stone-carpet-reviews.png"
-          onclick="location.href='#reviews'"
-          alt="screenshot"
-        />
-      </div>
+      <!-- ProvenExpert Bewertungssiegel -->
+      <div id="pewl"></div>
+      <script
+        type="text/javascript"
+        src="https://www.provenexpert.com/widget/landing_ds-steinteppich.js?feedback=1&avatar=0&competence=1&style=black"
+        async
+      ></script>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://www.provenexpert.com/css/widget_landing.css"
+        media="screen,print"
+      />
+      <!-- ProvenExpert Bewertungssiegel Ende -->
     </section>
     <section class="bg-[url('img/bg2.png')] bg-cover bg-fixed" id="reviews">
       <div
@@ -2064,7 +2101,7 @@
       </div>
     </footer>
     <footer
-      class="w-full text-center border-t border-grey p-3 sticky bg-[#8b4816] bottom-0"
+      class="w-full text-center border-t border-grey p-3 sticky bg-[#8b4816] bottom-0 z-[1000]"
     >
       <a
         href="tel:+49 159 06529020"
@@ -2128,13 +2165,11 @@
     </script>
     <script src="js/script.js"></script>
     <script type="text/javascript">
-      setTimeout("CallButton()", 3000);
+      setTimeout("CallButton()", 15000);
 
       function CallButton() {
         document.getElementById("button32").click();
       }
-
-      
     </script>
     <!-- The button to open modal -->
     <label for="my-modal-3" class="btn hidden" id="button32"
@@ -2149,52 +2184,62 @@
           >✕</label
         >
         <h2
-          class="mb-2 text-3xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white"
+          class="mb-2 text-2xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white"
         >
-        Lassen Sie sich kostenlos beraten
+          Holen Sie sich eine kostenlose Vor-Ort-Beratung und einen
+          Kostenvoranschlag für Ihr Steinteppich-Renovierungsprojekt.
         </h2>
         <div class="relative bg-white">
-            <div class="flex justify-center items-center">
-              <div class="flex items-center mr-4">
-                <span class="text-2xl font-bold text-gray-700" id="minutes">30</span>
-                <span class="ml-2 mt-1 text-sm font-bold text-gray-500 uppercase">Minuten</span>
-              </div>
-              <div class="flex items-center">
-                <span class="text-2xl font-bold text-gray-700" id="seconds">00</span>
-                <span class="ml-2 mt-1 text-sm font-bold text-gray-500 uppercase">Sekunden</span>
-              </div>
+          <div class="flex justify-center items-center">
+            <div class="flex items-center mr-4">
+              <span class="text-2xl font-bold text-gray-700" id="minutes"
+                >45</span
+              >
+              <span class="ml-2 mt-1 text-sm font-bold text-gray-500 uppercase"
+                >Minuten</span
+              >
+            </div>
+            <div class="flex items-center">
+              <span class="text-2xl font-bold text-gray-700" id="seconds"
+                >00</span
+              >
+              <span class="ml-2 mt-1 text-sm font-bold text-gray-500 uppercase"
+                >Sekunden</span
+              >
             </div>
           </div>
-          <hr>
-          <script>
-            const minutesLabel = document.getElementById("minutes");
-const secondsLabel = document.getElementById("seconds");
-let totalSeconds = 1800; // 30 minutes
+        </div>
+        <hr />
+        <script>
+          const minutesLabel = document.getElementById("minutes");
+          const secondsLabel = document.getElementById("seconds");
+          let totalSeconds = 1800; // 30 minutes
 
-setInterval(setTime, 1000);
+          setInterval(setTime, 1000);
 
-function setTime() {
-  totalSeconds--;
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
+          function setTime() {
+            totalSeconds--;
+            const minutes = Math.floor(totalSeconds / 20);
+            const seconds = totalSeconds % 20;
 
-  minutesLabel.innerHTML = pad(minutes);
-  secondsLabel.innerHTML = pad(seconds);
+            minutesLabel.innerHTML = pad(minutes);
+            secondsLabel.innerHTML = pad(seconds);
 
-  if (totalSeconds === 0) {
-    clearInterval();
-    // Add code to disable the offer page or show a message that the offer has expired
-  }
-}
+            if (totalSeconds === 0) {
+              clearInterval();
+              // Add code to disable the offer page or show a message that the offer has expired
+            }
+          }
 
-function pad(val) {
-  const valString = val.toString();
-  return valString.length < 2 ? "0" + valString : valString;
-}
-
-          </script>
-        <p class="mb-2 text-md text-center dark:text-white">
-            Lassen Sie sich jetzt kostenlos für Ihre Renovierung und Neugestaltung beraten! <br class="hidden"> Beeilen Sie sich, dieses Angebot läuft in nur 30 Minuten ab.
+          function pad(val) {
+            const valString = val.toString();
+            return valString.length < 2 ? "0" + valString : valString;
+          }
+        </script>
+        <p class="my-1 text-md text-center dark:text-white">
+          Erhalten Sie für eine begrenzte Zeit 15 % Rabatt<br
+            class="hidden"
+          />auf alle Fliesenrenovierungsdienste.
         </p>
         <form action="sendmail.php" method="post" class="space-y-4">
           <div>
@@ -2269,9 +2314,3 @@ function pad(val) {
     </div>
   </body>
 </html>
-
-<!--
-<div class="icons-container1" onclick="location.href='#trust'">
-    <img src="img/side-icon-fixed.jpg" alt="" width="100%">
-</div> 
--->

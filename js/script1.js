@@ -10,4 +10,17 @@ nextButton.addEventListener("click", () => {
 prevButton.addEventListener("click", () => {
   slidesContainer.scrollLeft -= slideWidth * 2;
 });
-// Timer modal js 
+// ProvenExpert 
+myID = document.getElementById("proven");
+
+var myScrollFunc = function () {
+    var y = window.scrollY;
+    if (y >= screen.height) {
+      myID.className = "hideProven"
+    } else {
+      myID.className = "showProven"
+      
+    }
+};
+
+window.addEventListener("scroll", myScrollFunc);
